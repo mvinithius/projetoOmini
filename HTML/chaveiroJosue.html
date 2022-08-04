@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="../css/style.css" rel="stylesheet">
+  <link href="../css/calendario.css" rel="stylesheet">
+  <link href="../css/reset.css" rel="reset">
+  <title>serviços1</title>
+</head>
+<body>
+
+  <header>
+     
+    <div class="logo1"><div class="logo"><img id="simbol" src="../imagens\Logo Azul.png" alt=""> </img></div></div>
+    <div class="logo2">
+    <div class="login"><button id="botao_login"> LOGIN </button></div>
+    <div class="carrinho"><button id="botao_carrinho"> CARRINHO </button></div>
+    <div class="image0"><img  src="../imagens\Carrinho.png" alt=""></div> 
+    </div> 
+  </header>
+
+  
+  <nav>
+   
+    <div class="navegacao">
+      <span class="servicos"> HOME </span>
+      <span class="servicos"> SERVIÇOS </span>
+      <span class="servicos"> SOBRE NÓS </span>
+    </div>
+    <div class="pesquisar"> 
+      <span class="pesquisa"> Pesquisar...  <img class="lupa" src="../imagens\Pesquisa.png" alt=""></span>
+    </div>
+      
+
+  </nav> 
+  <main>
+    <div class="principal">
+    <div id="diarista"><img id="imagem_diarista" src="../imagens/chaveiro.jpg"alt=""></div>
+    <div class="container">
+    <div id="logo_diarista"><img id="faxineira1" src="../imagens/portas_abertas.png"alt=""></div>
+    <div id="texto_diarista">,<p class="txt_diarista">O profissional diarista é aquele trabalhador que presta serviços ocasionais para um ou mais contratantes,<b>sem exceder duas vezes na</b><b>semana para cada um.</b></p></div>
+    </div>
+    <!-- div do agende visita, preço e calendário -->
+    <div class="container_dois">
+    <div id="visitante"><img id="img_visitante" src="../imagens/visitante 1.png"alt=""></div>
+    <div><p class="txt_visita"><b>AGENDE UMA</p><p class="txt_visita">VISITA</b></p></div>
+    <div id="preco"><p class="preco"><b>Por apenas R$39,99</b></p><p class="txt_preco">1 DIÁRIA DE SERVIÇO;</p><p class="txt_preco">1 PRODUTO BÔNUS.</p><button id="botao_comprar"> COMPRE ESTE SERVIÇO</button></div>
+    </div>
+    <!-- CALENDARIO -->
+    <div id="ajuste">
+    <div id="container">
+    <div id="header">
+    <div id="monthDisplay"></div>
+    <div class="botoes">
+        <button id="backButton">Voltar</button>
+        <button id="nextButton">Próximo</button>
+    </div>
+    </div>
+    
+    <div id="weekdays">
+    <div>Dom</div>
+    <div>Seg</div>
+    <div>Ter</div>
+    <div>Qua</div>
+    <div>Qui</div>
+    <div>Sex</div>
+    <div>Sáb</div>
+    </div>
+    <!-- div dinamic -->
+    <div id="calendar" ></div>
+    </div>
+    <div id="newEventModal">
+      <h2>Novo evento</h2>
+        <input id="eventTitleInput" placeholder="digite aqui"/>
+         <button id="saveButton"> Salvar</button>
+         <button id="cancelButton">Cancelar</button>
+    </div>
+    <div id="deleteEventModal">
+      <h2>Evento</h2>
+    <div id="eventText"></div><br>
+         <button id="deleteButton">Deletar</button>
+         <button id="closeButton">Fechar</button>
+    </div>
+    <div id="modalBackDrop"></div>
+    </div>
+    </div>
+<!-- RODA PÉ -->
+<footer class="footer">
+  <div class="alinhamento">
+      <div class="info">
+          <ul>
+              <li>
+                  <a href="">TRABALHE CONOSCO</a>
+              </li>
+              <li>
+                  <a href="">CONTATE-NOS</a>
+              </li>
+              <li>
+                  <a href=""><img src="..\Imagens\midias sociais.png" alt="midias sociais"></a>
+              </li>
+          </ul>
+      </div>
+      <div class="cartoes">
+          <img src="..\Imagens\meios-de-pagamento-2x.png" alt="meios de pagamento">
+      </div>
+  </div>
+</footer>
+  <script src="../JS/main.js"></script>
+</main>
+  
+</body>
+</html>
