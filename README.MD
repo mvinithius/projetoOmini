@@ -2,7 +2,7 @@
 
 ### Para rodar o projeto instale os módulos npm
 
-> pm install
+> npm install
 
 ### Em seguida rode o comando
 
