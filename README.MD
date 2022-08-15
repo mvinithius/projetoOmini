@@ -4,7 +4,7 @@
 
 > npm install
 
-### Em seguida rode o comando
+### Em seguida envie o comando no terminal
 
 > nodemon bin/www
 
