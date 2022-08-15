@@ -1,0 +1,129 @@
+/* header e footer: classe auxiliar */
+.content-space{
+    width: 1130px;
+    max-width: 1130px;
+    margin: 0 auto !important;
+}
+ 
+/* HEADER: LOGO - MENU - CARRINHO  */
+.nav-menu{
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    position: relative;
+    padding: 15px;    
+}
+
+.logo-header{
+    width: 40%;
+}
+
+.logo-header img{
+    width: 120px;
+}
+
+.login-carrinho{
+    font-size: 1.2em;
+}
+
+.login-carrinho a {
+    margin-left: 15px;
+    text-decoration: none;
+}
+
+.login-carrinho a img{
+    width: 15px;
+}
+
+/* HEADER: HOME - SOBRE - SEARCH */
+
+.container-nav-header{
+    height: 80px;
+    padding: 5px;
+    box-sizing: border-box;
+    background: #1D3D73;
+    display: flex;
+    width: 100%;
+}
+
+.home-sobre a{
+    text-decoration: none;
+    color: #1D3D73;
+}
+
+.nav-header{
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%; 
+}
+
+.nav-header a {
+    font-size: 1.1em;
+    font-weight: 400;
+    margin-right: 15px;
+    color: #FFFFFF;
+}
+
+.search input{
+    padding: 8px;
+    max-height: 25px;
+    border-radius: 21px;
+    border: 0.5px solid #FFFFFF;
+    font-size: 14px;
+    width: 200px;
+    background: transparent;
+    box-sizing: border-box;
+}
+
+/* FOOTER: TRABALHE, CONTATE, ETC*/
+
+.container-footer{
+    background: #1D3D73;
+    height: 130px;
+    display: flex;
+    align-items: center;
+    padding-left: 15px;
+    box-sizing: border-box;
+    width: 100%;
+}
+
+.footer-information{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.container-box a{
+    color: #FFFFFF;
+    text-decoration: none;
+    font-size: 0.85em;
+    display: flex;
+    margin-bottom: 10px;
+}
+
+.container-box img{
+    /* width: 120px; */
+    max-width: 120px;
+}
+
+/* FOOTER: COPYRIGHT*/
+
+.footer-bg-bottom {
+    background: #10274E;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.image-copyright img{
+    max-width: 40px;
+    max-height: 40px;
+}
+
+.copyright{
+    color:#FFFFFF;
+    font-size: 0.6em;
+}
