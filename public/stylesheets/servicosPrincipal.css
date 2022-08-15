@@ -1,0 +1,51 @@
+/* MAIN: VITRINE */
+
+main{
+    max-width: 930px;
+    margin: 0 auto !important;
+}
+
+#titulo-vitrine{
+    padding-left: 60px;
+    padding-top: 15px;
+    margin: 35px 0 25px;
+    font-weight: bold;
+    text-align: left;
+    color: #1D3D73;
+    font-size: 2em;    
+}
+
+.container-vitrine{
+    padding: 30px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.titulo-servicos{
+    font-size: 1.4em;
+    font-weight: bold;
+    text-align: left;
+    padding-top: 10px;
+}
+
+.texto-servicos{
+    font-size: 0.8em;
+}
+
+.servicos-vitrine{
+    margin-right: 20px;
+    margin-bottom: 25px;
+}
+
+.servicos-vitrine img{
+    width: 180px;
+    height: 140px;
+    object-fit: cover;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+}
+
+div a {
+    text-decoration: none;
+    color: #1D3D73;
+}
