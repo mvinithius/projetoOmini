@@ -16,6 +16,7 @@ router.get('/encanador', pageController.encanador)
 router.get('/jardineiro', pageController.jardineiro)
 router.get('/montador', pageController.montador)
 router.get('/pedreiro', pageController.pedreiro)
+router.get('/carrinho', pageController.carrinho)
 
 
 module.exports = router;

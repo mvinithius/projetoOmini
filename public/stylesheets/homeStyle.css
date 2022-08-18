@@ -38,7 +38,8 @@
     color: #FFFFFF;
     font-weight: 700;
     font-size: 20px;
-    padding-right: 20px
+    padding-right: 20px;
+    text-shadow: -1px 3px 10px rgba(6, 6, 6, 0.8);
 }
 
 #diarista img {
@@ -60,7 +61,8 @@
     color: #FFFFFF;
     font-weight: 700;
     font-size: 20px;
-    padding-right: 20px
+    padding-right: 20px;
+    text-shadow: -1px 3px 10px rgba(6, 6, 6, 0.8);
 }
 
 #encanador img {
@@ -82,7 +84,8 @@
     color: #FFFFFF;
     font-weight: 700;
     font-size: 20px;
-    padding-right: 20px
+    padding-right: 20px;
+    text-shadow: -1px 3px 10px rgba(6, 6, 6, 0.8);
 }
 
 #dedetizador img {
@@ -104,6 +107,7 @@
     color: #FFFFFF;
     font-weight: 700;
     font-size: 20px;
+    text-shadow: -1px 3px 10px rgba(6, 6, 6, 0.8);
 }
 
 #eletricista img {
@@ -125,7 +129,8 @@
     color: #FFFFFF;
     font-weight: 700;
     font-size: 20px;
-    padding-right: 20px
+    padding-right: 20px;
+    text-shadow: -1px 3px 10px rgba(6, 6, 6, 0.8);
 }
 
 #pedreiro img {
@@ -147,7 +152,8 @@
     color: #FFFFFF;
     font-weight: 700;
     font-size: 20px;
-    padding-right: 20px
+    padding-right: 20px;
+    text-shadow: -1px 3px 10px rgba(6, 6, 6, 0.8);
 }
 
 #jardineiro img {
@@ -169,7 +175,8 @@
     color: #FFFFFF;
     font-weight: 700;
     font-size: 20px;
-    padding-right: 20px
+    padding-right: 20px;
+    text-shadow: -1px 3px 10px rgba(6, 6, 6, 0.8);
 }
 
 #chaveiro img {
@@ -191,6 +198,7 @@
     color: #FFFFFF;
     font-weight: 700;
     font-size: 20px;
+    text-shadow: -1px 3px 10px rgba(6, 6, 6, 0.8);
 }
 
 #montador img {
@@ -203,9 +211,9 @@
 .labelmontador{
     position: absolute;
     text-align: center;
-    top: 25%;
+    top: 35%;
     left: 20%;
-} */
+}
 
 .labelmoveis{
     position: absolute;

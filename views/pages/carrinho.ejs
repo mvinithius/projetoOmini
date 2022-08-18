@@ -1,0 +1,87 @@
+<%- include('../partials/header') %>
+
+
+<link rel="stylesheet" href="/stylesheets/styleCarrinho.css">
+
+
+<main>
+    <div class="title">
+        <h1>
+            ESTE É O SEU <br> CARRINHO
+        </h1>
+
+        <h2>
+            <span class="confira">Confira se está tudo aqui</span> e finalize a sua compra!
+        </h2>
+
+    </div>
+
+    <div id="produtos"> 
+
+        <div class="first--prod">
+            <div class="fr--imagem">
+                <img src="/images/encanador.png" alt="imagem de encanador">
+            </div>
+
+            <div class="text-fr-prod">
+              <div class="title-fr-prod"> <h2>ENCANADOR</h2> </div>
+                        
+            <div class="cont-fr-prod">
+                 <h3>  Diária de serviço de profissional encanador agendada para o dia 18/09 </h3>
+            </div>
+        
+        </div>
+
+        <div class="price-fr"> 50,9 </div>
+        </div>
+    
+        <!-- <div class="second-prod">
+            <div class="sd--imagem">
+                <img src="/images/montador.jpg" alt="imagem de montador">
+            </div>
+
+           <div class="text-sd-prod">
+
+           
+            <div class="title-sd-prod"> <h2>  MONTADOR  </h2> </div>
+          
+            <div class="cont-sd-prod"> <h3>Diária de serviço de profissional montador de móveis agendada para o dia 19/09</h3> </div>
+
+        </div> -->
+
+
+        <!-- APROVEITANDO A CLASSE FIRST--PROD E CHILDS -->
+        <div class="first--prod">
+            <div class="fr--imagem">
+                <img src="/images/montador.jpg" alt="imagem de montador">
+            </div>
+
+           <div class="text-fr-prod">
+
+           
+            <div class="title-fr-prod"> <h2>  MONTADOR  </h2> </div>
+          
+            <div class="cont-fr-prod"> <h3>Diária de serviço de profissional montador de móveis agendada para o dia 19/09</h3> </div>
+
+        </div>
+
+        <div class="price-fr"> 56,9 </div>
+
+    </div>
+    
+
+    <div id="botoes">
+        <button class="finalizar">
+            <a href="#">FINALIZAR COMPRA</a>
+
+        </button>
+
+        <button class="continuar">
+            <a href="#">CONTINUAR COMPRANDO</a>
+
+        </button>
+
+    </div>
+</main>
+
+<%- include('../partials/footer') %>
