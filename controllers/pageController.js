@@ -39,6 +39,10 @@ const pageController = {
 
     montador: (req, res) => {
         res.render('pages/montador')
+    },
+    
+    carrinho: (req, res) => {
+        res.render('pages/carrinho')
     }
 
 }
