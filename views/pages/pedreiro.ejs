@@ -1,14 +1,84 @@
 <%- include('../partials/header') %>
 
-<!-- Teste de altura da página, apagar quando inputar informações -->
-<style>
-    MAIN{
-        height: 500px;
-    }
-</style>
-<!-- Teste de altura da página, apagar quando inputar informações -->
+<head>
+    <link href="/stylesheets/styleAgendamento.css" rel="stylesheet">
+    <link href="/stylesheets/calendarioAgendamento.css" rel="stylesheet">
+</head>
 
 <main>
+    <div class="principal">
+
+        <div id="banner">
+            <img id="imagem_servico" src="/images/pedreiroBanner.png" alt="Banner do serviço">
+        </div>
+
+        <div class="container">
+            <div id="logo_servico">
+                <img id="iconeServico" src="/images/iconeDiarista.png" alt="Icone do serviço">
+            </div>
+
+            <div id="texto_servico">
+                <p class="txt_servico">O profissional diarista é aquele trabalhador que presta serviços ocasionais
+                    para um ou mais contratantes,<b>sem exceder duas vezes na</b><b>semana para cada um.</b></p>
+            </div>
+        </div>
+
+        <!-- div do agende visita, preço e calendário -->
+        <div class="container_dois">
+            <div id="visitante"><img id="img_visitante" src="/images/iconeVisitante.png" alt=""></div>
+            <div>
+                <p class="txt_visita"><b>AGENDE UMA</p>
+                <p class="txt_visita">VISITA</b></p>
+            </div>
+            <div id="preco">
+                <p class="preco"><b>Por apenas R$49,90</b></p>
+                <p class="txt_preco">1 DIÁRIA DE SERVIÇO;</p>
+                <p class="txt_preco">1 PRODUTO BÔNUS.</p><button id="botao_comprar"> COMPRE ESTE SERVIÇO</button>
+            </div>
+        </div>
+        <!-- CALENDARIO -->
+        <div id="ajuste">
+            <div id="container">
+                <div id="header">
+                    <div id="monthDisplay"></div>
+                    <div class="botoes">
+                        <button id="backButton">Voltar</button>
+                        <button id="nextButton">Próximo</button>
+                    </div>
+                </div>
+
+                <div id="weekdays">
+                    <div>Dom</div>
+                    <div>Seg</div>
+                    <div>Ter</div>
+                    <div>Qua</div>
+                    <div>Qui</div>
+                    <div>Sex</div>
+                    <div>Sáb</div>
+                </div>
+                <!-- div dinamic -->
+                <div id="calendar"></div>
+            </div>
+            <div id="newEventModal">
+                <h2>Novo evento</h2>
+                <input id="eventTitleInput" placeholder="digite aqui" />
+                <button id="saveButton"> Salvar</button>
+                <button id="cancelButton">Cancelar</button>
+            </div>
+            <div id="deleteEventModal">
+                <h2>Evento</h2>
+                <div id="eventText"></div><br>
+                <button id="deleteButton">Deletar</button>
+                <button id="closeButton">Fechar</button>
+            </div>
+            <div id="modalBackDrop"></div>
+        </div>
+
+    </div>
+
 </main>
+
+
+<script src="/javascripts/main.js"></script>
 
 <%- include('../partials/footer') %>

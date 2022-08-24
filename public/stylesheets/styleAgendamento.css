@@ -26,12 +26,12 @@
 
 } */
 
-#diarista{
+#banner{
     margin: auto;
     height: 300px;
  }
 
-#imagem_diarista{
+#imagem_servico{
  
     width: 100%;
     height: 250px;
@@ -44,7 +44,7 @@
 }
 
 
-#diarista img{
+#banner img{
     width: 1000px;
     object-fit: cover;
     object-position: 80% 20%;
@@ -61,7 +61,7 @@
 }
    
     /* LOGOTIPO DO PROFISSIONAL */
-#logo_diarista{
+#logo_servico{
     display: flexbox;
     width: 150px;
     height: 124px;
@@ -70,8 +70,9 @@
     border: 1px;
     border-radius: 20px;
     background:  #1D3D73;
-   } 
-#faxineira1{
+} 
+
+#iconeServico{
     margin-top: 16px;
     margin-left: 25px;
     width: 60%;
@@ -81,10 +82,10 @@
     background-color: #1D3D73;
     border-radius: 20px;
     
-   }
+}
 
    /* TEXTO SOBRE O PROFISSIONAL */
-#texto_diarista{
+#texto_servico{
     flex: auto;
     width: 88%;
     height: 85%;
@@ -94,15 +95,16 @@
     border-radius: 20px;
     background:  #1D3D73;
   
-   }
-.txt_diarista{
+}
+
+.txt_servico{
     flex: auto;
     margin-top:2px;
     width: 100%;
     height: 5%;;
     font-family: inter;
     color: bisque;
-   }
+}
  
    /* DIV AGENDE UMA VISITA */ 
    @keyframes beat {
@@ -110,6 +112,7 @@
     to{ transform: scale(1.1);}
     
 }
+
 .container_dois{
     display: flex;
     flex-direction: row;
@@ -121,13 +124,15 @@
     border: 1px;
     border-radius: 15px;
     justify-content: center;
-   }
+}
+
 #img_visitante{
     display: flex;
     height: 40px;
     width: 40px;
     margin: auto;
-   }
+}
+
 #visitante{
     display: flex;
     height: 100px;
@@ -136,7 +141,8 @@
     border: 1px;
     border-radius: 5px;
 
-   }
+}
+
 .txt_visita{
     display: flex;
     margin-left: 20px; 
@@ -145,7 +151,7 @@
     font-family: inter;
     color: #1D3D73;
     animation: beat 1.1s infinite alternate;  /* animação */
-   }
+}
 
    /* DIV DO PREÇO */
 #preco{
@@ -159,7 +165,8 @@
     border: 1px;
     border-radius: 10px;
 
-   }
+}
+
 .preco{
     
     display: flex;
@@ -167,8 +174,9 @@
     font-family: inter;
     color: white;
     margin-top: 1px;
-   }
-.txt_preco{
+}
+
+   .txt_preco{
     display: flex;
     font-size: 18px;
     margin: auto;
@@ -179,11 +187,12 @@
     font-family: inter;
     font-size: 14px;
     padding: 20px;
-   }
-#botao_comprar{
+}
+
+   #botao_comprar{
     display: flex;
     height: 60px;
     width: 400px;
-   }   
+}   
 
 

@@ -25,3 +25,8 @@ main{
 footer {
   margin-top: auto;
 }
+
+div a {
+  text-decoration: none;
+  color: #1D3D73;
+}
