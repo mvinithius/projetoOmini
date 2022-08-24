@@ -1,0 +1,150 @@
+/* main{
+    max-width: 1000px;
+    margin: 0 auto !important;
+} */
+
+
+.caixa{
+    border: solid 1px black;
+    margin: 60px 75px 170px 55px;
+    padding: 55px
+}
+
+button:hover{
+    color:white;
+    background-color:#1D3D73;
+    font-weight: 500;
+
+}
+
+/*Caixona*/
+.carinha{
+    position:absolute;
+    width: 15%;
+    margin-left:60px;
+    margin-top:8px;
+    border: 2px solid rgba(0, 0, 0, 0.39);
+}
+.alterarFoto{
+    position:absolute;
+    margin-top:320px;
+    margin-left:70px;
+    font-family: 'Inter';
+    font-style: normal;
+    color:black;
+    font-weight: 420;
+    font-size: 20px;
+    padding:10px 30px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    background-color: white;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 30px;    
+
+}
+.nome{
+    border: solid 1px black;
+    font-family: 'Inter'; 
+    font-style: normal;
+    font-weight: 400;
+    font-size: 24px;
+    color: rgba(29, 61, 115, 0.53);
+    padding: 10px;
+    margin: 10px 0px 10px 400px;
+}
+
+.email{
+   
+    border: solid 1px black;
+    font-family: 'Inter'; 
+    font-style: normal;
+    font-weight: 400;
+    font-size: 24px;
+    color: rgba(29, 61, 115, 0.53);
+    padding: 10px;
+    margin: 10px 0px 10px 400px;
+}
+
+.senha{
+    
+    border: solid 1px black;
+    font-family: 'Inter'; 
+    font-style: normal;
+    font-weight: 400;
+    font-size: 24px;
+    color: rgba(29, 61, 115, 0.53);
+    padding: 10px;
+    margin: 10px 0px 10px 400px;
+}
+.cep{
+    border: solid 1px black;
+    font-family: 'Inter'; 
+    font-style: normal;
+    font-weight: 400;
+    font-size: 24px;
+    color: rgba(29, 61, 115, 0.53);
+    padding: 10px;
+    margin: 10px 0px 10px 400px;
+}
+.rua{
+    border: solid 1px black;
+    font-family: 'Inter'; 
+    font-style: normal;
+    font-weight: 400;
+    font-size: 24px;
+    color: rgba(29, 61, 115, 0.53);
+    padding: 10px;
+    margin: 10px 0px 10px 400px;
+}
+.número{
+    border: solid 1px black;
+    font-family: 'Inter'; 
+    font-style: normal;
+    font-weight: 400;
+    font-size: 24px;
+    color: rgba(29, 61, 115, 0.53);
+    padding: 10px;
+    margin: 10px 0px 10px 400px;
+}
+.CPF{
+    border: solid 1px black;
+    font-family: 'Inter'; 
+    font-style: normal;
+    font-weight: 400;
+    font-size: 24px;
+    color: rgba(29, 61, 115, 0.53);
+    padding: 10px;
+    margin: 10px 0px 10px 400px;
+}
+
+.perfilUser{
+    padding-top:85px;
+    padding-left: 55px;
+    font-size: 45px;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 700;
+    color: #1D3D73;
+}
+
+/*Caixona*/
+
+.salvarAlteras{
+    position:absolute;
+    font-family: 'Inter';
+    font-style: normal;
+    color:black;
+    margin-top:100px;
+    font-weight: 420;
+    font-size: 20px;
+    padding:10px 30px;
+    background-color: white;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 30px;    
+}
+
+main{
+    background-color: white;
+
+}

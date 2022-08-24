@@ -43,8 +43,11 @@ const pageController = {
     
     carrinho: (req, res) => {
         res.render('pages/carrinho')
-    }
+    },
 
+    perfilUsuario: (req, res) => {
+        res.render('pages/perfilUsuario')
+    }
 }
 
 
