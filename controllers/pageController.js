@@ -47,6 +47,10 @@ const pageController = {
 
     perfilUsuario: (req, res) => {
         res.render('pages/perfilUsuario')
+    },
+
+    login: (req, res) => {
+        res.render('pages/login')
     }
 }
 
