@@ -13,7 +13,10 @@
     <header>
 
         <div class="container-header">
-            <img src="/images/logoBranca.png" alt="Logo da Omnihouse">    
+            <a href="/">
+                <img src="/images/logoBranca.png" alt="Logo da Omnihouse">
+            </a>
+            
         </div>
             
     </header>
@@ -57,8 +60,8 @@
                 <div class="container-form-cadastro">
                     <form form action="" method="post" class="form-cadastro">
                         <input type="text" name="nome" id="nome" placeholder="Nome completo" required>
-                        <input type="email" name="email" id="email" placeholder="E-mail" required>
-                        <input type="password" name="senha" id="senha" placeholder="Senha" required>
+                        <input type="email" name="emailCadastro" id="emailCadastro" placeholder="E-mail" required>
+                        <input type="password" name="senhaCadastro" id="senhaCadastro" placeholder="Senha" required>
                         <input type="text" name="cep" id="cep" placeholder="CEP" required>
                         <input type="text" name="endereco" id="endereco" placeholder="Rua e número">
                         <input type="text" name="complemento" id="complemento" placeholder="Complemento">
@@ -66,6 +69,7 @@
                 </div>
 
                 <div class="fotoCadastro">
+                    <label for="foto"><img src="/images/iconeAnexo.png">Adicione sua foto de perfil</label>
                     <input type="file" name="foto" id="foto">
                 </div>
 
@@ -79,6 +83,21 @@
     </main>
     
     <footer>
+        <section id="footer-top">
+            <a href="#"> 
+                <img src="/images/iconeSocialMediaBranco.png">
+            </a>
+        </section>
+
+        <section id="footer-bottom">
+            <div id="copyright">
+                <p>Criado pelo Grupo 4 da TN 15-22 da DH</p>
+            </div>
+            
+            <div id="image-copyright">
+                <img src="images/logoDH.png" alt="Logo da Digital House">
+            </div>            
+        </section>
 
     </footer>
 
