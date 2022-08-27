@@ -18,6 +18,7 @@ router.get('/montador', pageController.montador)
 router.get('/pedreiro', pageController.pedreiro)
 router.get('/carrinho', pageController.carrinho)
 router.get('/perfil', pageController.perfilUsuario)
+router.get('/login', pageController.login)
 
 
 module.exports = router;
