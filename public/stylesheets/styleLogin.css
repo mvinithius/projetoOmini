@@ -28,7 +28,7 @@ html{
 
 .login{
     width: 300px;
-    height: 250px;
+    height: 220px;
     padding: 30px 10px 30px 10px;
     background-color: #FFFFFF;
     border-radius: 20px; 
@@ -64,9 +64,21 @@ html{
 }
 
 .salvarSenha{
-    margin: 15px 0 0 0;
     width: 90%;
+    margin: 15px 0 0 0;
+    display: flex;
+    align-items:center;
+    justify-content: left;
 }
+
+.salvarSenha input{
+    height: 12px;
+    width: 12px;
+    margin-top: auto;
+    margin-bottom: auto;
+    margin-right: 5px;
+}
+
 
 .recuperarSenha{
     width: 90%;
@@ -81,9 +93,9 @@ html{
     color: rgba(0, 133, 255, 1);
 }
 
-.botaoEntrar{
-    margin-top: 30px;
-}
+/* .botaoEntrar{
+    margin-top: 15px;
+} */
 
 .botaoEntrar :hover{
     background: #FFFFFF;
@@ -107,7 +119,7 @@ html{
 /* CADASTRO *//* CADASTRO *//* CADASTRO */
 .cadastro{
     width: 350px;
-    height: 450px;
+    height: 440px;
     padding: 30px 10px 30px 10px;
     box-sizing: border-box;
     background-color: #FFFFFF;
@@ -145,7 +157,7 @@ html{
 }
 
 .fotoCadastro{
-    width: 90%;
+    width: 100%;
     margin-top: 15px;
     display: flex;
     justify-content: center;
@@ -169,7 +181,7 @@ html{
 }
 
 .botaoCadastro{
-    margin-top: 15px;
+    /* margin-top: 15px; */
     width: min-content;
     display: flex;
     justify-content: center;

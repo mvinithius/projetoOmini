@@ -13,7 +13,7 @@
     <header>
 
         <div class="container-header">
-            <a href="/">
+            <a href="/" alt="Logo da Omnihouse">
                 <img src="/images/logoBranca.png" alt="Logo da Omnihouse">
             </a>
             
@@ -28,24 +28,25 @@
                     FAÇA O SEU LOGIN
                 </h1>
 
-                <form action="" method="post" class="form-login">
+                <form action="" method="POST" class="form-login">
                     <input type="email" name="email" id="email" placeholder="E-mail" required>
    
-                    <input type="password" name="senha" id="senha" placeholder="Senha" required>                    
-                </form>
-
-                <div class="salvarSenha">
-                    <input type="checkbox" name="salvarSenha" id="salvarSenha"> <label for="salvarSenha">Salvar senha</label>
-                </div>
-                
-                <div class="recuperarSenha">
-                    <a href="#">Esqueci minha senha</a>
-                </div>
+                    <input type="password" name="senha" id="senha" placeholder="Senha" required>          
                     
-                <div class="botaoEntrar">
-                    <input type="submit" value="ENTRAR">
-                </div>
-                
+                    <div class="salvarSenha">
+                        <input type="checkbox" name="salvarSenha" id="salvarSenha">
+                        <label for="salvarSenha">Salvar senha</label>
+                    </div>
+
+                    <div class="recuperarSenha">
+                        <a href="#">Esqueci minha senha</a>
+                    </div>
+                        
+                    <div class="botaoEntrar">
+                        <input type="submit" value="ENTRAR">
+                    </div>
+
+                </form>
 
             </section>
     
@@ -58,25 +59,27 @@
                 </div>
                 
                 <div class="container-form-cadastro">
-                    <form form action="" method="post" class="form-cadastro">
+
+                    <form action="" method="POST" class="form-cadastro">
                         <input type="text" name="nome" id="nome" placeholder="Nome completo" required>
                         <input type="email" name="emailCadastro" id="emailCadastro" placeholder="E-mail" required>
                         <input type="password" name="senhaCadastro" id="senhaCadastro" placeholder="Senha" required>
                         <input type="text" name="cep" id="cep" placeholder="CEP" required>
-                        <input type="text" name="endereco" id="endereco" placeholder="Rua e número">
+                        <input type="text" name="endereco" id="endereco" placeholder="Rua e número" required>
                         <input type="text" name="complemento" id="complemento" placeholder="Complemento">
+                        <div class="fotoCadastro">
+                            <label for="foto">
+                                <img src="/images/iconeAnexo.png">Adicione sua foto de perfil
+                            </label>
+                            <input type="file" name="foto" id="foto">
+                        </div>
+                        <div class="botaoCadastro">
+                            <input type="submit" value="CADASTRE-SE">
+                        </div>
                     </form>
+
                 </div>
 
-                <div class="fotoCadastro">
-                    <label for="foto"><img src="/images/iconeAnexo.png">Adicione sua foto de perfil</label>
-                    <input type="file" name="foto" id="foto">
-                </div>
-
-                <div class="botaoCadastro">
-                    <input type="submit" value="CADASTRE-SE">
-                </div>
-                
             </section> 
         </div>
         
