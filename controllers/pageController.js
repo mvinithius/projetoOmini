@@ -51,6 +51,10 @@ const pageController = {
 
     login: (req, res) => {
         res.render('pages/login')
+    },
+
+    cadastro: (req, res) => {
+        res.render('pages/cadastro')
     }
 }
 
