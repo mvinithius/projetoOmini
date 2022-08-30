@@ -22,68 +22,37 @@
     </header>
     
     <main>
-        <!-- <div class="container-main">
-            <section class="login">
+        <section class="cadastro">
+
+            <div class="titleCadastro">
                 <h1 class="title">
-                    FAÇA O SEU LOGIN
+                    CADASTRE-SE
                 </h1>
-
-                <form action="" method="POST" class="form-login">
-                    <input type="email" name="email" id="email" placeholder="E-mail" required>
-   
-                    <input type="password" name="senha" id="senha" placeholder="Senha" required>          
-                    
-                    <div class="salvarSenha">
-                        <input type="checkbox" name="salvarSenha" id="salvarSenha">
-                        <label for="salvarSenha">Salvar senha</label>
-                    </div>
-
-                    <div class="recuperarSenha">
-                        <a href="#">Esqueci minha senha</a>
-                    </div>
-                        
-                    <div class="botaoEntrar">
-                        <input type="submit" value="ENTRAR">
-                    </div>
-
-                </form>
-
-            </section> -->
-    
-            <section class="cadastro">
-
-                <div class="titleCadastro">
-                    <h1 class="title">
-                        CADASTRE-SE
-                    </h1>
-                </div>
+            </div>
                 
-                <div class="container-form-cadastro">
+            <div class="container-form-cadastro">
 
-                    <form action="" method="POST" class="form-cadastro">
-                        <input type="text" name="nome" id="nome" placeholder="Nome completo" required>
-                        <input type="email" name="emailCadastro" id="emailCadastro" placeholder="E-mail" required>
-                        <input type="password" name="senhaCadastro" id="senhaCadastro" placeholder="Senha" required>
-                        <input type="text" name="cep" id="cep" placeholder="CEP" required>
-                        <input type="text" name="endereco" id="endereco" placeholder="Rua e número" required>
-                        <input type="text" name="complemento" id="complemento" placeholder="Complemento">
-                        <div class="fotoCadastro">
-                            <label for="foto">
-                                <img src="/images/iconeAnexo.png">Adicione sua foto de perfil
-                            </label>
-                            <input type="file" name="foto" id="foto">
+                <form method="POST" action="/users/" enctype="multipart/form-data" class="form-cadastro">
+                    <input type="text" name="nome" id="nome" placeholder="Nome completo" required>
+                    <input type="email" name="emailCadastro" id="emailCadastro" placeholder="E-mail" required>
+                    <input type="password" name="senhaCadastro" id="senhaCadastro" placeholder="Senha" required>
+                    <input type="text" name="cep" id="cep" placeholder="CEP" required>
+                    <input type="text" name="endereco" id="endereco" placeholder="Rua e número" required>
+                    <input type="text" name="complemento" id="complemento" placeholder="Complemento">
+                    <div class="fotoCadastro">
+                        <label for="foto">
+                            <img src="/images/iconeAnexo.png">Adicione sua foto de perfil
+                        </label>
+                        <input type="file" name="foto" id="foto">
                         </div>
                         <div class="botaoCadastro">
                             <input type="submit" value="CADASTRE-SE">
                         </div>
-                    </form>
+                </form>
 
-                </div>
+            </div>
 
-            </section> 
-
-        </div>
-        
+        </section>         
     </main>
     
     <footer>

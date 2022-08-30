@@ -4,8 +4,7 @@ var router = express.Router();
 //importando o controller
 const pageController = require('../controllers/pageController')
 
-
-//definindo as rotas
+//home
 router.get('/', pageController.home)
 
 //serviços
@@ -26,7 +25,5 @@ router.get('/carrinho', pageController.carrinho)
 
 //user
 router.get('/perfil', pageController.perfilUsuario)
-
-
 
 module.exports = router;
