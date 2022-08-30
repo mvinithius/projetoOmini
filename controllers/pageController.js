@@ -1,4 +1,3 @@
-
 const pageController = {
 
     home: (req, res) => {
@@ -49,15 +48,6 @@ const pageController = {
         res.render('pages/perfilUsuario')
     },
 
-    login: (req, res) => {
-        res.render('pages/login')
-    },
-
-    cadastro: (req, res) => {
-        res.render('pages/cadastro')
-    }
 }
-
-
 
 module.exports = pageController
