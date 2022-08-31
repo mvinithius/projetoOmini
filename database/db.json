@@ -3,8 +3,8 @@
         {
             "id": "e9bab957-4726-4e94-a6e3-a4e664f269bd",
             "nome": "marcus",
-            "emailCadastro": "marcus@email.com",
-            "senhaCadastro": "123",
+            "email": "marcus@email.com",
+            "senha": "123",
             "cep": "69000000",
             "endereco": "rua 1",
             "complemento": "",

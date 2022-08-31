@@ -1,0 +1,17 @@
+<%- include('../../partials/header') %>
+
+<body>
+    <div>
+        <% if (users && users.length > 0) { %>
+            <% users.map(user => { %>
+                <p>Nome: <%= user.nome %></p>
+                <p>Email: <%= user.emailCadastro %></p>
+                <p>CEP: <%= user.cep %></p>
+                <p>Endereço: <%= user.endereco %></p>
+            <% }) %>
+        <% } else { %>
+        <% } %>
+    </div>
+    
+</body>
+</html>

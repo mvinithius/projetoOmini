@@ -1,0 +1,42 @@
+<%- include('../../partials/header') %>
+
+<link rel="stylesheet" href="/stylesheets/stylePerfil.css">
+
+<main>
+    <div id="container-title">
+        <h1 id="title"> ESSE É O SEU PERFIL OMNI</h1>
+    </div>
+
+    <div class="container-all">
+        
+        <!-- espaço da foto do usuário -->
+        <div class="espacoFoto">
+            <!-- <button class="alterarFoto">ALTERAR FOTO</button> -->
+            <img class="foto" src="/uploads/<%= user.foto %>">
+        </div>
+
+        <div class="container-formPerfil">
+            <div class="label">Nome</div>
+            <input type="text" readonly value="<%= user.nome %>">
+            <div class="label">E-mail</div>
+            <input type="text" readonly value="<%= user.email %>">
+            <div class="label">Senha</div>
+            <input type="password" readonly value="<%= user.senha %>">
+            <div class="label">Endereço</div>
+            <input type="text" readonly value="<%= user.endereco %>">
+            <div class="label">CEP</div>
+            <input type="text" readonly value="<%= user.cep %>">
+        </div>
+
+    </div>
+
+    <div id="div-botoes">
+        <a href="/users/edit/<%= user.id %>">
+            <button class="botao" id="normalFlag">EDITAR PERFIL</button>
+        </a>        
+        <button class="botao" id="redFlag">EXCLUIR PERFIL</button>        
+    </div>
+
+</main>
+
+<%- include('../../partials/footer') %>

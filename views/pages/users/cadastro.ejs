@@ -33,12 +33,12 @@
             <div class="container-form-cadastro">
 
                 <form method="POST" action="/users/" enctype="multipart/form-data" class="form-cadastro">
-                    <input type="text" name="nome" id="nome" placeholder="Nome completo" required>
-                    <input type="email" name="emailCadastro" id="emailCadastro" placeholder="E-mail" required>
-                    <input type="password" name="senhaCadastro" id="senhaCadastro" placeholder="Senha" required>
-                    <input type="text" name="cep" id="cep" placeholder="CEP" required>
-                    <input type="text" name="endereco" id="endereco" placeholder="Rua e número" required>
-                    <input type="text" name="complemento" id="complemento" placeholder="Complemento">
+                    <input type="text" name="nome" id="nome" placeholder="Nome completo" required value="<%= user ? user.nome : '' %>">
+                    <input type="email" name="email" id="email" placeholder="E-mail" required value="<%= user ? user.email : '' %>">
+                    <input type="password" name="senha" id="senha" placeholder="Senha" required value="<%= user ? user.password: '' %>">
+                    <input type="text" name="cep" id="cep" placeholder="CEP" required value="<%= user ? user.cep: '' %>">
+                    <input type="text" name="endereco" id="endereco" placeholder="Rua e número" required value="<%= user ? user.endereco : '' %>">
+                    <input type="text" name="complemento" id="complemento" placeholder="Complemento" value="<%= user ? user.complemento : '' %>">
                     <div class="fotoCadastro">
                         <label for="foto">
                             <img src="/images/iconeAnexo.png">Adicione sua foto de perfil
