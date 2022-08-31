@@ -9,6 +9,13 @@ const writeToDB = () => {
 }
 
 const User = {
+    findAll: () => db.users,
+
+    findById: (id) => {
+        const user = db.users.find(user => user.id === id);
+        return user;
+    },
+
     create: (user, foto) => {
         db.users.push({ id: v4(), ...user, foto });
         writeToDB();
