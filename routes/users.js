@@ -15,18 +15,21 @@ router.get('/login', userController.formLogin);
 router.get('/cadastro', userController.formCadastro);
 
 //renderiza a página de lista de usuários
-router.get('/lista', userController.list)
+router.get('/lista', userController.list);
 
 //rota para criar o cadastro
 router.post('/cadastro', upload.single('foto'), userController.userCreate);
 
 //rota para mostrar o perfil do usuário
-router.get('/perfil/:id', userController.showPerfil)
+router.get('/perfil/:id', userController.showPerfil);
 
 //rota para mostrar o form de edição de perfil do usuário com informações do usuário
-router.get('/perfil/editform/:id', userController.editForm)
+router.get('/perfil/editform/:id', userController.editForm);
 
 //rota para atualizar os dados do usuário
-router.put('/perfil/edit/:id', upload.single('foto'), userController.update)
+router.put('/perfil/edit/:id', upload.single('foto'), userController.update);
+
+//rota para deletar um usuário
+router.delete('/perfil/delete/:id', userController.delete);
 
 module.exports = router;
