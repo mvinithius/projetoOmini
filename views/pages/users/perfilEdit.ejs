@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/stylesheets/reset.css">
+    <link rel="stylesheet" href="/stylesheets/theme.css">
+    <link rel="stylesheet" href="/stylesheets/perfilEdit.css">
+    <title>Omnihouse</title>
+</head>
+<body>
+    <header>
+
+        <div class="container-header">
+            <a href="/" alt="Logo da Omnihouse">
+                <img src="/images/logoBranca.png" alt="Logo da Omnihouse">
+            </a>
+        </div>
+            
+    </header>
+    
+    <main>
+        <section class="formulario">
+
+            <div class="titleAtualize">
+                <h1 class="title">
+                    ATUALIZE SEU CADASTRO
+                </h1>
+            </div>
+            
+            <div class="container-form">
+
+                <form method="POST" 
+                action="/users/perfil/edit/<%= user.id %>?_method=PUT" 
+                enctype="multipart/form-data" 
+                class="form"
+                >       
+                    <img src="/uploads/<%= user.foto %>">
+
+                        <div class="fotoPerfil">
+                            <label for="foto">
+                                <img src="/images/iconeAnexo.png">Atualize a sua foto
+                            </label>
+                            <input type="file" name="foto" id="foto">
+                        </div>
+
+                    <input type="text" name="nome" id="nome" placeholder="Nome completo" required value="<%= user.nome %>">
+                    <input type="email" name="email" id="email" placeholder="E-mail" required value="<%= user.email %>">
+                    <input type="password" name="senha" id="senha" placeholder="Senha" required value="<%= user.password %>">
+                    <input type="text" name="cep" id="cep" placeholder="CEP" required value="<%= user.cep %>">
+                    <input type="text" name="endereco" id="endereco" placeholder="Rua e número" required value="<%= user.endereco %>">
+                    <input type="text" name="complemento" id="complemento" placeholder="Complemento" value="<%= user.complemento %>">
+                    
+                        <div class="botao-salvar">
+                            <input type="submit" value="SALVAR ALTERAÇÕES">
+                        </div>
+                </form>
+
+                <div class="botao-voltar">
+                    <a href="/users/perfil/<%= user.id %>">
+                        <input type="button" value="VOLTAR"/>
+                    </a>
+                </div>
+                           
+
+            </div>
+
+        </section>         
+    </main>
+    
+    <footer>
+        <section id="footer-top">
+            <a href="#"> 
+                <img src="/images/iconeSocialMediaBranco.png">
+            </a>
+        </section>
+
+        <section id="footer-bottom">
+            <div id="copyright">
+                <p>Criado pelo Grupo 4 da TN 15-22 da DH</p>
+            </div>
+            
+            <div id="image-copyright">
+                <img src="/images/logoDH.png" alt="Logo da Digital House">
+            </div>            
+        </section>
+
+    </footer>
+
+</body>
+</html>
