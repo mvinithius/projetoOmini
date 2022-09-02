@@ -3,8 +3,7 @@ const { v4 } = require('uuid');
 
 let db = require('../database/db.json');
 
-const { uploadPath } = require('../config/upload')
-
+const { uploadPath } = require('../config/upload');
 
 const writeToDB = () => {
     const json = JSON.stringify(db);
@@ -34,6 +33,12 @@ const User = {
     update: (id, user, foto) => {
         const userIndex = db.users.findIndex(user => user.id === id);
         db.users[userIndex] = { id, ...user, foto };
+        writeToDB();
+    },
+
+    delete: (id) => {
+        const userIndex = db.users.findIndex(user => user.id === id);
+        db.users.splice(userIndex, 1);
         writeToDB();
     }
 }

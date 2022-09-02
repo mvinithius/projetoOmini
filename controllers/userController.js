@@ -55,6 +55,17 @@ const userController = {
         res.redirect('/');
     },
 
+    //delete do perfil
+    delete: (req, res) => {
+        const { id } = req.params;
+
+        User.removeFoto(id);
+        User.delete(id);
+
+        //redireciona pra home
+        res.redirect('/');
+    }
+
 }
 
 module.exports = userController;

@@ -1,14 +1,1 @@
-{
-    "users": [
-        {
-            "id": "d83ba44d-498c-48fd-91d4-cfe23c9b6df1",
-            "nome": "papaleguas virou patolinho",
-            "email": "papaleguasPatolinho@gmail.com",
-            "senha": "papaleguasPatolinho",
-            "cep": "papaleguasPatolinho",
-            "endereco": "papaleguasPatolinho",
-            "complemento": "papaleguasPatolinho",
-            "foto": "5a5ccf4c-d515-44ce-ae90-c4cfe334ad27-patolino.png"
-        }
-    ]
-}
+{"users":[]}
