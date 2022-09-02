@@ -21,23 +21,39 @@ const userController = {
     userCreate: (req, res) => {
         const user = req.body;
         const foto = req.file.filename;
+       
         User.create(user, foto);
-        res.redirect('/users');
+        
+        //redireciona pra home
+        res.redirect('/');
     },
 
-    //perfil do usuário
+    //exibir dados do perfil do usuário
     showPerfil: (req, res) => {
         const { id } = req.params;
         const user = User.findById(id);
         res.render('pages/users/perfil', { user });
     },
 
-    //para editar os dados do usuário
+    //carrega os dados do usuário no formulário a ser editado
     editForm: (req, res) => {
         const { id } = req.params;
         const user = User.findById(id);
-        res.render('pages/users/cadastro', { user });
-    }
+        res.render('pages/users/perfilEdit', { user });
+    },
+
+    //atualização do perfil do usuário
+    update: (req, res) => {
+        const { id } = req.params;
+        const user = req.body;
+        const foto = req.file.filename;
+
+        User.removeFoto(id);
+        User.update(id, user, foto);
+        
+        //redireciona pra home
+        res.redirect('/');
+    },
 
 }
 

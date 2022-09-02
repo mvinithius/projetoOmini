@@ -28,7 +28,7 @@ html{
 
 .login{
     width: 300px;
-    height: 220px;
+    height: 295px;
     padding: 30px 10px 30px 10px;
     background-color: #FFFFFF;
     border-radius: 20px; 
@@ -119,7 +119,7 @@ html{
 /* CADASTRO *//* CADASTRO *//* CADASTRO */
 .cadastro{
     width: 350px;
-    height: 440px;
+    height: 520px;
     padding: 30px 10px 30px 10px;
     box-sizing: border-box;
     background-color: #FFFFFF;
@@ -207,6 +207,37 @@ html{
     font-weight: 400;
     font-size: 15px;
 }
+
+/* LOGIN REDIRECT */ /* LOGIN REDIRECT */ /* LOGIN REDIRECT */
+#loginRedirect{
+    text-align: center;
+    padding: 10px;
+    margin-top: 10px;
+}
+
+#loginRedirect a{
+    margin-top: 15px;
+    cursor: pointer;
+    display: block;
+    color: rgba(0, 133, 255, 1);
+    text-decoration: underline;
+}
+
+
+/* CADASTRO REDIRECT */ /* CADASTRO REDIRECT */ /* CADASTRO REDIRECT */ 
+#cadastroRedirect{
+    text-align: center;
+    padding: 10px;
+}
+
+#cadastroRedirect a{
+    padding: 10px;
+    cursor: pointer;
+    display: block;
+    color: rgba(0, 133, 255, 1);
+    text-decoration: underline;
+}
+
 
 /* FOOTER *//* FOOTER *//* FOOTER */
 
