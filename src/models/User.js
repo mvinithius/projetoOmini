@@ -7,7 +7,7 @@ const { uploadPath } = require('../config/upload');
 
 const writeToDB = () => {
     const json = JSON.stringify(db);
-    fs.writeFileSync('./database/db.json', json);
+    fs.writeFileSync('./src/database/db.json', json);
 }
 
 const User = {

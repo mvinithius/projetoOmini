@@ -9,27 +9,27 @@ const userController = require('../controllers/userController');
 const upload = multer({ storage });
 
 //renderiza a página de login
-router.get('/login', userController.formLogin);
+router.get('/login', userController.renderFormLogin);
 
 //renderiza a página de cadastro
-router.get('/cadastro', userController.formCadastro);
+router.get('/cadastro', userController.renderFormCadastro);
 
 //renderiza a página de lista de usuários
-router.get('/lista', userController.list);
+router.get('/lista', userController.renderUserList);
 
 //rota para criar o cadastro
-router.post('/cadastro', upload.single('foto'), userController.userCreate);
+router.post('/cadastro', upload.single('foto'), userController.executeUserCreate);
 
 //rota para mostrar o perfil do usuário
-router.get('/perfil/:id', userController.showPerfil);
+router.get('/perfil/:id', userController.renderUserPerfil);
 
 //rota para mostrar o form de edição de perfil do usuário com informações do usuário
-router.get('/perfil/editform/:id', userController.editForm);
+router.get('/perfil/editform/:id', userController.renderUserEditData);
 
 //rota para atualizar os dados do usuário
-router.put('/perfil/edit/:id', upload.single('foto'), userController.update);
+router.put('/perfil/edit/:id', upload.single('foto'), userController.executeUserUpdate);
 
 //rota para deletar um usuário
-router.delete('/perfil/delete/:id', userController.delete);
+router.delete('/perfil/delete/:id', userController.executeUserDelete);
 
 module.exports = router;
