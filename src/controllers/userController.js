@@ -1,24 +1,24 @@
 const User = require('../models/User');
 
 const userController = {
-    //formulário de cadastro
-    formCadastro: (req, res) => {
+    //renderiza o formulário de cadastro
+    renderFormCadastro: (req, res) => {
         res.render('pages/users/cadastro');
     },
 
-    //formulário de login
-    formLogin: (req, res) => {
+    //renderiza o formulário de login
+    renderFormLogin: (req, res) => {
         res.render('pages/users/login');
     },
 
-    //pagina de lista de usuarios
-    list: (req, res) => {
+    //renderiza a pagina de lista de usuarios
+    renderUserList: (req, res) => {
         const users = User.findAll();
         res.render('pages/users/list', { users });
     },
 
-    //criação do usuário
-    userCreate: (req, res) => {
+    //executa a criação do usuário
+    executeUserCreate: (req, res) => {
         const user = req.body;
         const foto = req.file.filename;
        
@@ -28,22 +28,22 @@ const userController = {
         res.redirect('/');
     },
 
-    //exibir dados do perfil do usuário
-    showPerfil: (req, res) => {
+    //renderiza página de perfil do usuário
+    renderUserPerfil: (req, res) => {
         const { id } = req.params;
         const user = User.findById(id);
         res.render('pages/users/perfil', { user });
     },
 
-    //carrega os dados do usuário no formulário a ser editado
-    editForm: (req, res) => {
+    //renderiza dados do usuário na páginad e edição de cadastro
+    renderUserEditData: (req, res) => {
         const { id } = req.params;
         const user = User.findById(id);
         res.render('pages/users/perfilEdit', { user });
     },
 
-    //atualização do perfil do usuário
-    update: (req, res) => {
+    //executa a atualização do cadastro do usuário
+    executeUserUpdate: (req, res) => {
         const { id } = req.params;
         const user = req.body;
         const foto = req.file.filename;
@@ -55,8 +55,8 @@ const userController = {
         res.redirect('/');
     },
 
-    //delete do perfil
-    delete: (req, res) => {
+    //executa o delete do perfil do usuário
+    executeUserDelete: (req, res) => {
         const { id } = req.params;
 
         User.removeFoto(id);
