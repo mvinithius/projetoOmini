@@ -44,10 +44,6 @@ const pageController = {
         res.render('pages/carrinho')
     },
 
-    perfilUsuario: (req, res) => {
-        res.render('pages/perfilUsuario')
-    },
-
 }
 
 module.exports = pageController

@@ -28,11 +28,15 @@
                     FAÇA O SEU LOGIN
                 </h1>
 
-                <form action="" method="POST" class="form-login">
+                <form action="/users/login" method="POST" class="form-login">
                     <input type="email" name="email" id="email" placeholder="E-mail" required>
    
                     <input type="password" name="senha" id="senha" placeholder="Senha" required>          
                     
+                    <p>
+                        <%= error ? error : '' %>
+                    </p>
+
                     <div class="salvarSenha">
                         <input type="checkbox" name="salvarSenha" id="salvarSenha">
                         <label for="salvarSenha">Salvar senha</label>

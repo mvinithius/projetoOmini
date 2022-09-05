@@ -1,14 +1,21 @@
-//declarações
 var createError = require('http-errors');
 var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 
+// declaração da session
+const session = require('express-session');
+
+// declaração do método override
 const methodOverride = require('method-override')
+
+//middleware userIsAuthenticated
+const userIsAuthenticated = require('./src/middlewares/userIsAuthenticated');
 
 var indexRouter = require('./src/routes/index.routes');
 var usersRouter = require('./src/routes/users.routes');
+var privateRouter = require('./src/routes/userPrivate.routes');
 
 var app = express();
 
@@ -24,13 +31,30 @@ app.use(express.json());
 //permite o uso do fomulário multipart/form-data
 app.use(express.urlencoded({ extended: false }));
 
+// Define o uso de sessões
+app.use(session({
+    secret: 'projetoOmnihouseDH2022',
+    resave: false,
+    saveUninitialized: false,
+    cookie: {
+        secure: false
+    }
+}));
+
 app.use(cookieParser());
 app.use(express.static(__dirname + '/public'));
 
+//uso do método override: PUT, DELETE
 app.use(methodOverride('_method'))
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
+
+// Utiliza o middleware userIsAuthenticated para verificar se o usuário está logado
+// O middleware será executado para todas as rotas abaixo
+app.use(userIsAuthenticated);
+
+app.use('/users', privateRouter);
 
 // catch 404 and forward to error handler
 // app.use(function(req, res, next) {
