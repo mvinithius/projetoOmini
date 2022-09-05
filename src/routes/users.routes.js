@@ -5,11 +5,9 @@ const multer = require('multer');
 const { storage } = require('../config/upload');
 
 const userController = require('../controllers/userController');
+const authController = require('../controllers/authController');
 
 const upload = multer({ storage });
-
-//renderiza a página de login
-router.get('/login', userController.renderFormLogin);
 
 //renderiza a página de cadastro
 router.get('/cadastro', userController.renderFormCadastro);
@@ -31,5 +29,11 @@ router.put('/perfil/edit/:id', upload.single('foto'), userController.executeUser
 
 //rota para deletar um usuário
 router.delete('/perfil/delete/:id', userController.executeUserDelete);
+
+//renderiza a página de login
+router.get('/login', authController.renderLogin);
+
+//rota para fazer o login 
+router.post('/login', authController.executeUserLogin);
 
 module.exports = router;

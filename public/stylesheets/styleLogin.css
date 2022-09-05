@@ -28,7 +28,7 @@ html{
 
 .login{
     width: 300px;
-    height: 295px;
+    height: 320px;
     padding: 30px 10px 30px 10px;
     background-color: #FFFFFF;
     border-radius: 20px; 
@@ -79,6 +79,10 @@ html{
     margin-right: 5px;
 }
 
+.form-login p{
+    color: red; 
+    margin-bottom: 24px;
+}
 
 .recuperarSenha{
     width: 90%;

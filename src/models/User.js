@@ -13,6 +13,13 @@ const writeToDB = () => {
 const User = {
     findAll: () => db.users,
 
+    findByEmail: (email) => {
+        //busca o usuário pelo email informado
+        const user = db.users.find(user => user.email === email);
+        //retorna o usuário encontrado
+        return user;
+    },
+
     findById: (id) => {
         const user = db.users.find(user => user.id === id);
         return user;

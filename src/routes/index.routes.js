@@ -23,7 +23,4 @@ router.get('/pedreiro', pageController.pedreiro)
 //carrinho
 router.get('/carrinho', pageController.carrinho)
 
-//user
-router.get('/perfil', pageController.perfilUsuario)
-
 module.exports = router;

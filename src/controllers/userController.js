@@ -12,7 +12,7 @@ const userController = {
 
     //renderiza o formulário de login
     renderFormLogin: (req, res) => {
-        res.render('pages/users/login');
+        res.render('pages/users/login', {error: null});
     },
 
     //renderiza a pagina de lista de usuarios
@@ -70,8 +70,7 @@ const userController = {
 
         //redireciona pra home
         res.redirect('/');
-    }
-
+    },
 }
 
 module.exports = userController;
