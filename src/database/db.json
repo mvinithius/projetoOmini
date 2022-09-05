@@ -1,14 +1,3 @@
 {
-    "users": [
-        {
-            "id": "a015f769-035f-41db-8eb7-55fc1d3fb8b4",
-            "nome": "teste2editado",
-            "email": "teste2editado@gmail.com",
-            "senha": "123",
-            "cep": "editado",
-            "endereco": "rua editada",
-            "complemento": "editado",
-            "foto": "f91b1edb-2d48-4264-9e33-89ff49459dc3-patolino.png"
-        }
-    ]
+    "users": []
 }

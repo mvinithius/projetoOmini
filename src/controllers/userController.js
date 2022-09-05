@@ -1,5 +1,9 @@
 const User = require('../models/User');
 
+const bcrypt = require('bcrypt');
+
+const saltRounds = 10;
+
 const userController = {
     //renderiza o formulário de cadastro
     renderFormCadastro: (req, res) => {
@@ -19,10 +23,12 @@ const userController = {
 
     //executa a criação do usuário
     executeUserCreate: (req, res) => {
-        const user = req.body;
+        console.log(req.body);
+        const {nome, email, senha, cep, endereco, complemento} = req.body;
         const foto = req.file.filename;
+        const hash = bcrypt.hashSync(senha, saltRounds);
        
-        User.create(user, foto);
+        User.create({nome, email, senha: hash, cep, endereco, complemento}, foto);
         
         //redireciona pra home
         res.redirect('/');
