@@ -1,17 +1,40 @@
+<html>
+<!-- HEAD -->
 <%- include('../../partials/header') %>
+<link rel="stylesheet" href="/stylesheets/userList.css">
+<!-- HEAD -->
 
 <body>
-    <div>
-        <% if (users && users.length > 0) { %>
-            <% users.map(user => { %>
-                <p>Nome: <%= user.nome %></p>
-                <p>Email: <%= user.emailCadastro %></p>
-                <p>CEP: <%= user.cep %></p>
-                <p>Endereço: <%= user.endereco %></p>
-            <% }) %>
-        <% } else { %>
-        <% } %>
-    </div>
+    <main>
+        <div class="column">
+            <% if (users && users.length > 0) { %>
+                <% users.map(user => { %>
+                    <div class="card">
+                        <div class="foto">
+                            <img src="/uploads/<%=user.foto%>">
+                        </div>
+                        <div class="label">Nome:</div>
+                        <div class="data"><%= user.nome %></div>
+                        <div class="label">Email:</div>
+                        <div class="data"><%= user.email %></div>
+                    </div>
+                    <div class="column">
+                        <a class="button" href="/users/perfil/<%= user.id %>">
+                            Visualizar perfil
+                        </a>
+                    </div>
     
+                <% }) %>
+            <% } else { %>
+                <h4> Nenhum usuário cadastrado </h4>
+            <% } %>
+        </div>    
+    </main>
+ 
 </body>
+
+<!-- FOOTER -->
+<%- include('../../partials/footer') %>
+<!-- FOOTER -->
+
 </html>
