@@ -1,1 +1,14 @@
-{"users":[{"id":"7e985737-11ec-4001-828a-cc45ac317dc8","nome":"teste1","email":"teste1@gmail.com","senha":"$2b$10$3XhovKKNmrLwzjp3zcfWqO9PTDNRp4lkQt6C/R3TOIIzE/wCOLlhS","cep":"69068000","endereco":"rua 33","complemento":"","foto":"0498e2c9-4ad8-4b35-97f0-d9f1e089de1d-patolino.png"}]}
+{
+    "users": [
+        {
+            "id": "7e985737-11ec-4001-828a-cc45ac317dc8",
+            "nome": "teste1editado",
+            "email": "teste1editado@gmail.com",
+            "senha": "$2b$10$xYV805ynxwRTD36BWCWmg.pLRYhimLS/KK9fpqOfiD3r3o1FSCTnG",
+            "cep": "69068000",
+            "endereco": "rua 33",
+            "complemento": "",
+            "foto": "2fd05d1d-189f-407d-8891-2587cab2d176-papa leguas.png"
+        }
+    ]
+}

@@ -51,11 +51,12 @@ const userController = {
     //executa a atualização do cadastro do usuário
     executeUserUpdate: (req, res) => {
         const { id } = req.params;
-        const user = req.body;
+        const { nome, email, senha, cep, endereco, complemento } = req.body;
         const foto = req.file.filename;
+        const hash = bcrypt.hashSync(senha, saltRounds);
 
         User.removeFoto(id);
-        User.update(id, user, foto);
+        User.update(id, {nome, email, senha: hash, cep, endereco, complemento}, foto);
         
         //redireciona pra home
         res.redirect('/');
