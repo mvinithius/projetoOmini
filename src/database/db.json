@@ -1,14 +1,1 @@
-{
-    "users": [
-        {
-            "id": "7e985737-11ec-4001-828a-cc45ac317dc8",
-            "nome": "teste1editado",
-            "email": "teste1editado@gmail.com",
-            "senha": "$2b$10$xYV805ynxwRTD36BWCWmg.pLRYhimLS/KK9fpqOfiD3r3o1FSCTnG",
-            "cep": "69068000",
-            "endereco": "rua 33",
-            "complemento": "",
-            "foto": "2fd05d1d-189f-407d-8891-2587cab2d176-papa leguas.png"
-        }
-    ]
-}
+{"users":[]}
