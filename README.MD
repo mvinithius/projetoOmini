@@ -1,10 +1,10 @@
 ## Instruções
 
-### Para rodar o projeto instale os módulos npm
+### Para rodar o projeto instale os módulos npm:
 
 > npm install
 
-### Em seguida envie o comando no terminal
+### Para rodar o servidor:
 
 > nodemon bin/www
 
