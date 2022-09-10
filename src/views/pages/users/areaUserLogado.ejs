@@ -1,0 +1,67 @@
+<html>
+  <!-- <header> -->
+    <%- include('../../partials/header') %>
+    <link rel="stylesheet" href="/stylesheets/areaRestrita.css">
+  <!-- </header> -->
+  
+  <body>
+    <main>
+
+        <div id="title">
+            SUA CONTA
+        </div>
+
+        <section id="container-conteudo">
+
+            <div id="container-texto">
+                <p id="welcome-text">
+                    Bem vindo de volta, <u><%= user.nome %></u>!
+                </p>               
+            </div>
+
+            <div id="container-opcoes">
+
+                <a href="perfil/:id" class="opcoes">
+                    <p>PERFIL</p>
+                </a>
+                
+                <a href="#" class="opcoes">
+                    <p>PEDIDOS</p>
+                </a>
+                
+                <a href="#" class="opcoes">
+                    <p>ENDEREÇOS</p>
+                </a>
+                
+                <a href="#" class="opcoes">
+                    <p>CARTÕES</p>
+                </a>          
+
+                <form action="/users/logout" method="POST">
+                    <button class=opcoes>
+                        <p>LOGOUT</p>
+                    </button>
+                </form>   
+
+            </div>
+
+        </section>
+
+
+
+        </br>
+        </br> 
+        =========
+        TEMPORÁRIO
+        =========
+        </br>
+        </br>       
+
+        <a href="/users/lista">
+        <button>Lista de usuários</button>
+        </a> 
+
+    </main>
+    
+  </body>
+</html>

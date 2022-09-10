@@ -13,25 +13,25 @@ const upload = multer({ storage });
 router.get('/cadastro', userController.renderFormCadastro);
 
 //renderiza a página de lista de usuários
-router.get('/lista', userController.renderUserList);
+// router.get('/lista', userController.renderUserList);
 
 //rota para criar o cadastro
 router.post('/cadastro', upload.single('foto'), userController.executeUserCreate);
 
 //rota para mostrar o perfil do usuário
-router.get('/perfil/:id', userController.renderUserPerfil);
+// router.get('/perfil/:id', userController.renderUserPerfil);
 
 //rota para mostrar o form de edição de perfil do usuário com informações do usuário
-router.get('/perfil/editform/:id', userController.renderUserEditData);
+// router.get('/perfil/editform/:id', userController.renderUserEditData);
 
 //rota para atualizar os dados do usuário
-router.put('/perfil/edit/:id', upload.single('foto'), userController.executeUserUpdate);
+// router.put('/perfil/edit/:id', upload.single('foto'), userController.executeUserUpdate);
 
-//rota para deletar um usuário
-router.delete('/perfil/delete/:id', userController.executeUserDelete);
+// //rota para deletar um usuário
+// router.delete('/perfil/delete/:id', userController.executeUserDelete);
 
 //renderiza a página de login
-router.get('/login', authController.renderLogin);
+router.get('/login', authController.renderUserFormLogin);
 
 //rota para fazer o login 
 router.post('/login', authController.executeUserLogin);
