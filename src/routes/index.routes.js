@@ -2,25 +2,25 @@ var express = require('express');
 var router = express.Router();
 
 //importando o controller
-const pageController = require('../controllers/pageController')
+const PageController = require('../controllers/PageController')
 
 //home
-router.get('/', pageController.home)
+router.get('/', PageController.home)
 
 //serviços
-router.get('/servicos', pageController.servicos)
+router.get('/servicos', PageController.servicos)
 
 //agendamento
-router.get('/chaveiro', pageController.chaveiro)
-router.get('/dedetizador', pageController.dedetizador)
-router.get('/diarista', pageController.diarista)
-router.get('/eletricista', pageController.eletricista)
-router.get('/encanador', pageController.encanador)
-router.get('/jardineiro', pageController.jardineiro)
-router.get('/montador', pageController.montador)
-router.get('/pedreiro', pageController.pedreiro)
+router.get('/chaveiro', PageController.chaveiro)
+router.get('/dedetizador', PageController.dedetizador)
+router.get('/diarista', PageController.diarista)
+router.get('/eletricista', PageController.eletricista)
+router.get('/encanador', PageController.encanador)
+router.get('/jardineiro', PageController.jardineiro)
+router.get('/montador', PageController.montador)
+router.get('/pedreiro', PageController.pedreiro)
 
 //carrinho
-router.get('/carrinho', pageController.carrinho)
+router.get('/carrinho', PageController.carrinho)
 
 module.exports = router;
