@@ -1,17 +1,25 @@
-const User = require('../models/User');
+const { Usuario } = require('../models')
 
 const bcrypt = require('bcrypt');
 
 const saltRounds = 10;
 
-const userController = {
-    //executa o login do usuário
-    executeUserLogin: (req, res) => {
+const AuthController = {
+    //renderiza a pagina de lista de usuarios
+    renderUserList: async (req, res) => {
+        let users = await Usuario.findAll()
+
+        //renderiza a página com lista de usuários
+        res.render('pages/users/list', { users });
+    },
+
+    // executa o login do usuário
+    UserLogin: async (req, res) => {
         //pega os dados do usuário no formulário de login
         const {email, senha} = req.body;
         
         //chama a model pra buscar usuário pelo e-mail
-        const usuario = User.findByEmail(email);
+        const usuario = await Usuario.findOne({where: {email: email}});
 
         //se o usuário informado não existir
         if(!usuario){
@@ -30,14 +38,15 @@ const userController = {
 
         // Se o email e a senha forem válidos, cria uma sessão para o usuário
         // Salva todas as informações do usuário na sessão
-        req.session.user = { 
-            email: usuario.email, 
-            id: usuario.id, 
-            nome: usuario.nome,
-            endereco: usuario.endereco,
-            cep: usuario.cep,
-            foto: usuario.foto
-        };
+        req.session.user = usuario.id
+        // { 
+        //     email: usuario.email, 
+        //     id: usuario.id, 
+        //     nome: usuario.nome,
+        //     endereco: usuario.endereco,
+        //     cep: usuario.cep,
+        //     foto: usuario.foto
+        // };
 
         // Redireciona para a página restrita
         // Utiliza a rota userPrivate
@@ -62,15 +71,6 @@ const userController = {
     
         // se não estiver logado, redireciona para a página de login
         return res.render('pages/users/login',  { error: null });
-    },
-
-    //renderiza a pagina de lista de usuarios
-    renderUserList: (req, res) => {
-        //busca todos os usuários no Db
-        const users = User.findAll();
-
-        //renderiza a página com lista de usuários
-        res.render('pages/users/list', { users });
     },
     
     //renderiza a página restrita (área logada do usuário)
@@ -123,4 +123,4 @@ const userController = {
 }
 
 
-module.exports = userController;
+module.exports = AuthController;

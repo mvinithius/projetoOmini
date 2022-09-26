@@ -1,4 +1,4 @@
-const pageController = {
+const PageController = {
 
     home: (req, res) => {
         res.render('pages/home')
@@ -46,4 +46,4 @@ const pageController = {
 
 }
 
-module.exports = pageController
+module.exports = PageController
