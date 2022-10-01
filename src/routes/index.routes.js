@@ -3,6 +3,7 @@ var router = express.Router();
 
 //importando o controller
 const PageController = require('../controllers/PageController')
+const ServiceController = require('../controllers/serviceController')
 
 //home
 router.get('/', PageController.home)

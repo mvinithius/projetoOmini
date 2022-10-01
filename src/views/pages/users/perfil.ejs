@@ -9,10 +9,9 @@
 
     <div class="container-all">
         
-        <!-- espaço da foto do usuário -->
         <div class="espacoFoto">
             <img class="foto" src="/uploads/<%= user.foto %>">
-        </div>
+        </div>         
 
         <div class="container-formPerfil">
             <div class="label">Nome</div>
@@ -30,7 +29,7 @@
     </div>
 
     <div id="div-botoes">
-        <a href="/users/perfil/editform/<%= user.id %>">
+        <a href="edit/<%= user.id %>">
             <button class="botao" id="normalFlag">EDITAR PERFIL</button>
         </a>
         

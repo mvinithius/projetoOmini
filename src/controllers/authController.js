@@ -5,12 +5,61 @@ const bcrypt = require('bcrypt');
 const saltRounds = 10;
 
 const AuthController = {
-    //renderiza a pagina de lista de usuarios
-    renderUserList: async (req, res) => {
-        let users = await Usuario.findAll()
 
-        //renderiza a página com lista de usuários
-        res.render('pages/users/list', { users });
+    //renderiza página de perfil do usuário com os dados de usuário
+    renderUserPerfil: async (req, res) => {
+        // armazena o id do usuário da sessão
+        const userId = req.session.user;
+
+        // busca pelos dados do usuário no banco de dados com o ID que armazenamos acima
+        const {nome, email, senha, cep, endereco, complemento} = await Usuario.findByPk(userId);
+
+        // armazena os dados do usuario que foram buscados no banco
+        const user = {nome, email, senha, cep, endereco, complemento}       
+
+        // renderiza a pagina de perfil passando os dados do usuario buscado no banco
+        res.render('pages/users/perfil', { user });
+    },
+
+    //renderiza dados do usuário na página de atualização de perfil
+    renderEditForm: async (req, res) => {
+              
+        const userId = await req.session.user;
+
+        const {nome, email, senha, cep, endereco, complemento} = await Usuario.findByPk(userId);
+        
+        const user = {nome, email, senha, cep, endereco, complemento}
+
+        res.render('pages/users/perfilEdit', {user});
+    },
+ 
+    // edita os dados do usuário
+    userEdit: async (req, res) => {
+        // recebe o id do usuário
+        const userId = await req.session.user;
+
+        // recebe os dados do formulário de edição
+        const {nome, email, senha, endereco, cep, complemento} = req.body;
+
+        // criptografia da senha
+        const hash = bcrypt.hashSync(senha, saltRounds);
+
+        // executa a atualização de dados
+        const atualizacao = await Usuario.update({
+            nome,
+            email,
+            senha: hash,
+            endereco,
+            cep,
+            complemento,
+        },
+        {
+            where: {
+                id: userId
+            }
+        })      
+        
+        return res.redirect('/')
     },
 
     // executa o login do usuário
@@ -19,16 +68,16 @@ const AuthController = {
         const {email, senha} = req.body;
         
         //chama a model pra buscar usuário pelo e-mail
-        const usuario = await Usuario.findOne({where: {email: email}});
+        const user = await Usuario.findOne({where: {email: email}});
 
         //se o usuário informado não existir
-        if(!usuario){
+        if(!user){
             //renderiza a página de login com erro
             return res.render('pages/users/login', {error: 'Email ou senha inválidos'});
         }
 
         //verifica se a senha informada é a mesma que a senha criptografada no db
-        const senhaValida = bcrypt.compareSync(senha, usuario.senha);
+        const senhaValida = bcrypt.compareSync(senha, user.senha);
 
         //verifica se a senha é válida
         if(!senhaValida) {
@@ -36,17 +85,8 @@ const AuthController = {
             return res.render('pages/users/login', {error: 'Email ou senha inválidos'});
         }
 
-        // Se o email e a senha forem válidos, cria uma sessão para o usuário
-        // Salva todas as informações do usuário na sessão
-        req.session.user = usuario.id
-        // { 
-        //     email: usuario.email, 
-        //     id: usuario.id, 
-        //     nome: usuario.nome,
-        //     endereco: usuario.endereco,
-        //     cep: usuario.cep,
-        //     foto: usuario.foto
-        // };
+        // Se o email e a senha forem válidos, cria uma sessão para o usuário salvado o ID do usuário
+        req.session.user = user.id
 
         // Redireciona para a página restrita
         // Utiliza a rota userPrivate
@@ -74,52 +114,34 @@ const AuthController = {
     },
     
     //renderiza a página restrita (área logada do usuário)
-    renderAreaRestrita: (req, res) => {
-        // Busca o usuário na sessão
-        const user = req.session.user;
+    renderAreaRestrita: async (req, res) => {
+        // Armazena o ID do usuário da sessão
+        const userId = await req.session.user;
 
-        // Renderiza a página restrita passando os dados do usuário logado
+        // busca pelo nome do usuário no banco de dados com o ID salvo
+        const { nome } = await Usuario.findByPk(userId);
+
+        // armazena o nome do usuario
+        const user = nome;
+
+        // Renderiza a página restrita passando o nome do usuário
         return res.render('pages/users/areaUserLogado',  { user });
     },
 
-    //renderiza página de perfil do usuário
-    renderUserPerfil: (req, res) => {
-        const user = req.session.user;
-        // const { id } = req.params;
-        // const user = User.findById(id);
-        res.render('pages/users/perfil', { user });
-    },
+    userDelete: async (req, res) => {
+        // armazena o id do usuário
+        const userId = req.session.user;
 
-    //renderiza dados do usuário na página de edição de cadastro
-    renderUserEditData: (req, res) => {
-        const { id } = req.params;
-        const user = User.findById(id);
-        res.render('pages/users/perfilEdit', { user });
-    },
-
-    //executa a atualização do cadastro do usuário
-    executeUserUpdate: (req, res) => {
-        const { id } = req.params;
-        const { nome, email, senha, cep, endereco, complemento } = req.body;
-        const foto = req.file.filename;
-        const hash = bcrypt.hashSync(senha, saltRounds);
-
-        User.removeFoto(id);
-        User.update(id, {nome, email, senha: hash, cep, endereco, complemento}, foto);
+        // deleta o usuário com base no id
+        const deletar = await Usuario.destroy({
+            where: {
+                id: userId
+            }
+        })
         
-        //redireciona para home
-        res.redirect('/');
-    },
-
-    executeUserDelete: (req, res) => {
-        const { id } = req.params;
-
-        User.removeFoto(id);
-        User.delete(id);
-
-        //redireciona pra home
-        res.redirect('/');
-    },
+        await req.session.destroy();
+        return res.redirect('/');
+    }
 }
 
 

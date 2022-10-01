@@ -35,15 +35,15 @@
                 action="/users/perfil/edit/<%= user.id %>?_method=PUT" 
                 enctype="multipart/form-data" 
                 class="form"
-                >       
+                >
                     <img src="/uploads/<%= user.foto %>">
 
-                        <div class="fotoPerfil">
-                            <label for="foto">
-                                <img src="/images/iconeAnexo.png">Atualize a sua foto
-                            </label>
-                            <input type="file" name="foto" id="foto">
-                        </div>
+                    <div class="fotoPerfil">
+                        <label for="foto">
+                            <img src="/images/iconeAnexo.png">Atualize a sua foto
+                        </label>
+                        <input type="file" name="foto" id="foto">
+                    </div>                    
 
                     <input type="text" name="nome" id="nome" placeholder="Nome completo" required value="<%= user.nome %>">
                     <input type="email" name="email" id="email" placeholder="E-mail" required value="<%= user.email %>">
@@ -52,9 +52,9 @@
                     <input type="text" name="endereco" id="endereco" placeholder="Rua e número" required value="<%= user.endereco %>">
                     <input type="text" name="complemento" id="complemento" placeholder="Complemento" value="<%= user.complemento %>">
                     
-                        <div class="botao-salvar">
-                            <input type="submit" value="SALVAR ALTERAÇÕES">
-                        </div>
+                    <div class="botao-salvar">
+                        <input type="submit" value="SALVAR ALTERAÇÕES">
+                    </div>
                 </form>
 
                 <div class="botao-voltar">

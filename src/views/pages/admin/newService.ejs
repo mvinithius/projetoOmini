@@ -1,0 +1,24 @@
+<html>
+  <!-- <header> -->
+    <%- include('../../partials/header') %>
+    <link rel="" href="">
+  <!-- </header> -->
+  <body>
+
+    <main>
+
+        <form action="/admin/adicionarServico" method="post">
+            <label for="titulo">Título:</label>
+            <input type="text" name="titulo" id="titulo">
+            <label for="descricao">Descrição:</label>
+            <input type="text" name="descricao" id="descricao">
+            <label for="valor">Valor:</label>
+            <input type="text" name="valor" id="valor">
+
+            <input type="submit" value="Cadastrar">
+        </form>
+
+    </main>
+    
+  </body>
+</html>

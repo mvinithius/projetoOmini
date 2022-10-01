@@ -63,12 +63,12 @@ main {
     cursor: pointer;
 }
 
-/* .opcoes a:hover{
+.opcoes a:hover{
     -webkit-transition: all 0.5s 0s ease, all 0.5s 0s ease;
     -moz-transition: all 0.5s 0s ease, all 0.5s 0s ease;
     -o-transition: all 0.5s 0s ease, all 0.5s 0s ease;
     transition: all 0.5s 0s ease, all 0.5s 0s ease;
-} */
+}
 
 
 
