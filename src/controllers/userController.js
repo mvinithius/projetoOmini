@@ -22,7 +22,7 @@ const UserController = {
         // checar se o usuário existe
         const checkIfUserExists = await Usuario.findOne({ where: { email: email } })
         
-        // se usuário existir, recarrega pagina de cadastro
+        // se usuário já existir, recarrega pagina de cadastro
         if (checkIfUserExists) {
             return res.render('pages/users/cadastro', {error: 'E-mail já cadastrado'})
         }
@@ -49,7 +49,6 @@ const UserController = {
                 console.log('Erro ao criar sessão')
             })
     },
-
 }
 
 module.exports = UserController

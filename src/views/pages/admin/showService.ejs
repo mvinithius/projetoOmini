@@ -1,0 +1,42 @@
+<html>
+<!-- HEAD -->
+<%- include('../../partials/header') %>
+    <link rel="stylesheet" href="/stylesheets/serviceList.css">
+    <!-- HEAD -->
+
+    <body>
+        <main>
+            <div class="row">
+                <div class="card">
+
+                    <div class="label">ID:</div>
+                    <div class="data"><%= service.id %></div>
+                    <div class="label">Título:</div>
+                    <div class="data"><%= service.titulo %> </div>
+                    <div class="label">Descrição:</div>
+                    <div class="data"><%= service.descricao %></div>
+                    <div class="label">Valor:</div>
+                    <div class="data">R$ <%= service.valor %></div>
+                    <div class="button">
+
+                        <a href="editarServico/<%= service.id %>">
+                            <button type="submit">Editar</button>
+                        </a>
+
+                        <form method="POST" action="/admin/deletarServico/<%= service.id %>?_method=DELETE">
+                            <button type="submit">Excluir</button>
+                        </form>
+
+                    </div>
+
+                </div>
+
+        </main>
+
+    </body>
+
+    <!-- FOOTER -->
+    <%- include('../../partials/footer') %>
+        <!-- FOOTER -->
+
+</html>

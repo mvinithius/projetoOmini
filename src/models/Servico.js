@@ -1,44 +1,31 @@
 const { DataTypes } = require('sequelize')
 
-
 module.exports = (sequelize, DataTypes) => {
 
-    const Usuario =  sequelize.define('Usuario', {
+    const Servico =  sequelize.define('Servico', {
         id: {
             type: DataTypes.INTEGER,
             primaryKey: true,
             autoIncrement: true,
             allowNull: false
         },
-        nome: {
+        titulo: {
             type: DataTypes.STRING,
             allowNull: false
         },
-        email: {
+        descricao: {
             type: DataTypes.STRING,
             allowNull: false,
         },
-        senha: {
+        valor: {
             type: DataTypes.STRING,
             allowNull: false
         },
-        endereco: {
-            type: DataTypes.STRING,
-            allowNull: false
-        },
-        cep: {
-            type: DataTypes.STRING,
-            allowNull: false
-        },
-        complemento: {
-            type: DataTypes.STRING,
-            allowNull: true
-        }
     },
     {
-        tableName: 'usuarios',
+        tableName: 'servicos',
         timestamps: false
     })
 
-    return Usuario
+    return Servico
 }

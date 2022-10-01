@@ -16,11 +16,36 @@
 
     </div>
 
+    <div id="container-carrinho">
+        <% if (cart && cart.length > 0) { %>
+            <% cart.map(services => { %>
+                <div class="produto">
+                    <div class="foto-produto">
+                        
+                    </div>
+
+                    <div class="titulo-produto"> 
+                        <h2><%= cart.titulo %></h2> 
+                    </div>
+
+                    <div class="dados-agendamento">
+                        
+                    </div>
+
+                </div>
+
+        
+        <% }) %>
+    </div>
+
+    
+
+
     <div id="produtos"> 
 
         <div class="first--prod">
             <div class="fr--imagem">
-                <img src="/images/encanador.png" alt="imagem de encanador">
+                
             </div>
 
             <div class="text-fr-prod">
@@ -34,20 +59,6 @@
 
         <div class="price-fr"> 50,9 </div>
         </div>
-    
-        <!-- <div class="second-prod">
-            <div class="sd--imagem">
-                <img src="/images/montador.jpg" alt="imagem de montador">
-            </div>
-
-           <div class="text-sd-prod">
-
-           
-            <div class="title-sd-prod"> <h2>  MONTADOR  </h2> </div>
-          
-            <div class="cont-sd-prod"> <h3>Diária de serviço de profissional montador de móveis agendada para o dia 19/09</h3> </div>
-
-        </div> -->
 
 
         <!-- APROVEITANDO A CLASSE FIRST--PROD E CHILDS -->

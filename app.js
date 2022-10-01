@@ -16,6 +16,8 @@ const userIsAuthenticated = require('./src/middlewares/userIsAuthenticated');
 var indexRouter = require('./src/routes/index.routes');
 var usersRouter = require('./src/routes/users.routes');
 var privateRouter = require('./src/routes/userPrivate.routes');
+var adminRouter = require('./src/routes/admin.routes');
+
 
 var app = express();
 
@@ -49,10 +51,11 @@ app.use(methodOverride('_method'))
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
+app.use('/admin', adminRouter);
 
 // Utiliza o middleware userIsAuthenticated para verificar se o usuário está logado
 // O middleware será executado para todas as rotas abaixo
-app.use(userIsAuthenticated);
+// app.use(userIsAuthenticated);
 
 app.use('/users', privateRouter);
 

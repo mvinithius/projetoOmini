@@ -21,7 +21,5 @@ router.get('/login', AuthController.renderUserFormLogin);
 //rota para fazer o login 
 router.post('/login', AuthController.UserLogin);
 
-//renderiza a página de lista de usuários
-router.get('/lista', AuthController.renderUserList);
 
 module.exports = router;

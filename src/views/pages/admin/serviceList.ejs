@@ -1,0 +1,60 @@
+<html>
+<!-- HEAD -->
+<%- include('../../partials/header') %>
+<link rel="stylesheet" href="/stylesheets/serviceList.css">
+<!-- HEAD -->
+
+<body>
+    <main>
+
+        <a href="adicionarServico">
+            <div class="options">
+                <p>Cadastrar serviço</p>
+            </div>
+        </a>
+
+        <div class="row">
+            <% if (services && services.length > 0) { %>
+                <% services.map(services => { %>
+                    <div class="card">
+                        <div class="foto">
+                            <img src="/uploads/<%=services.foto%>">
+                        </div>
+                        <div class="label">ID:</div>
+                        <div class="data"><%= services.id %></div>
+                        <div class="label">Título:</div>
+                        <div class="data"><%= services.titulo %></div>
+                        <div class="label">Descrição: </div>
+                        <div class="data"><%= services.descricao %></div>
+                        <div class="label">Valor:</div>
+                        <div class="data">R$ <%= services.valor %></div>
+                        <div class="button">
+                            
+                            <a href="service/<%= services.id %>">Visualizar</a>
+
+                            <a href="editarServico/<%= services.id %>">
+                                <button type="submit">Editar</button>
+                            </a>
+                            
+                            <form method="POST" action="/admin/deletarServico/<%= services.id %>?_method=DELETE">
+                                <button type="submit">Excluir</button>
+                            </form>                            
+                            
+                        </div>
+                        
+                    </div>
+                <% }) %>
+            <% } else { %>
+                <h4> Nenhum serviço cadastrado! </h4>
+            <% } %>
+        </div>
+
+    </main>
+ 
+</body>
+
+<!-- FOOTER -->
+<%- include('../../partials/footer') %>
+<!-- FOOTER -->
+
+</html>
