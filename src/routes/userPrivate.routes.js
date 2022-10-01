@@ -15,15 +15,15 @@ router.post('/logout', AuthController.executeUserLogout);
 router.get('/minha-conta', AuthController.renderAreaRestrita);
 
 //rota para mostrar o perfil do usuário
-router.get('/perfil/', AuthController.renderUserPerfil);
+router.get('/perfil/:id', AuthController.renderUserPerfil);
 
 //rota para mostrar o form de edição de perfil do usuário com informações do usuário
-router.get('/perfil/edit/', AuthController.renderEditForm);
+router.get('/perfil/edit/:id', AuthController.renderEditForm);
 
 //rota para atualizar os dados do usuário
-router.put('/perfil/edit/', upload.single('foto'), AuthController.userEdit);
+router.put('/perfil/edit/:id', upload.single('foto'), AuthController.userEdit);
 
 //rota para deletar um usuário
-router.delete('/perfil/delete/', AuthController.userDelete);
+router.delete('/perfil/delete/:id', AuthController.userDelete);
 
 module.exports = router;

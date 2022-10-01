@@ -21,18 +21,6 @@ module.exports = (sequelize, DataTypes) => {
         senha: {
             type: DataTypes.STRING,
             allowNull: false
-        },
-        endereco: {
-            type: DataTypes.STRING,
-            allowNull: false
-        },
-        cep: {
-            type: DataTypes.STRING,
-            allowNull: false
-        },
-        complemento: {
-            type: DataTypes.STRING,
-            allowNull: true
         }
     },
     {
