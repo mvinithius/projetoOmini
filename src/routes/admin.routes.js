@@ -10,7 +10,8 @@ const AdminController = require('../controllers/adminController')
 //renderiza a página de lista de usuários
 router.get('/UserList', AdminController.showUserList);
 
-// router.get('/perfil/:id', AuthController.adminRenderUserPerfil);
+// renderiza o perfil do usuário para o admin
+router.get('/user/perfil/:id', AdminController.showUserPerfil)
 
 //rota para renderizar a lista de serviços
 router.get('/ServiceList', ServiceController.renderServiceList);

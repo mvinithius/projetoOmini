@@ -7,24 +7,30 @@ const saltRounds = 10;
 const UserController = {
     //renderiza o formulário de cadastro
     renderFormCadastro: (req, res) => {
-        res.render('pages/users/cadastro', {error: null});
+        res.render('pages/users/cadastroSimples', {error: null});
     },
 
     //executa a criação do usuário
     UserCreate: async (req, res) => {
         console.log(req.body);
         
-        const {nome, email, senha, cep, endereco, complemento} = req.body;
+        const {nome, email, senha, senhaConfirm} = req.body;
         // const foto = req.file.filename;
+
+        if(senha != senhaConfirm){
+            res.render('pages/users/cadastroSimples', {error: 'Senha não coincide'});
+
+            return
+        }
         
         const hash = bcrypt.hashSync(senha, saltRounds);
 
-        // checar se o usuário existe
+        // checa se o usuário existe
         const checkIfUserExists = await Usuario.findOne({ where: { email: email } })
         
         // se usuário já existir, recarrega pagina de cadastro
         if (checkIfUserExists) {
-            return res.render('pages/users/cadastro', {error: 'E-mail já cadastrado'})
+            return res.render('pages/users/cadastroSimples', {error: 'E-mail já cadastrado'})
         }
        
         // armazena os dados do usuario
@@ -32,9 +38,6 @@ const UserController = {
             nome,
             email,
             senha: hash,
-            cep,
-            endereco,
-            complemento
         }
 
         await Usuario.create(user)

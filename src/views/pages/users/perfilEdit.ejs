@@ -43,14 +43,15 @@
                             <img src="/images/iconeAnexo.png">Atualize a sua foto
                         </label>
                         <input type="file" name="foto" id="foto">
-                    </div>                    
+                    </div>
+                    <p style="color: red">
+                        <%= error ? error : '' %>
+                    </p>                    
 
                     <input type="text" name="nome" id="nome" placeholder="Nome completo" required value="<%= user.nome %>">
                     <input type="email" name="email" id="email" placeholder="E-mail" required value="<%= user.email %>">
-                    <input type="password" name="senha" id="senha" placeholder="Senha" required value="<%= user.password %>">
-                    <input type="text" name="cep" id="cep" placeholder="CEP" required value="<%= user.cep %>">
-                    <input type="text" name="endereco" id="endereco" placeholder="Rua e número" required value="<%= user.endereco %>">
-                    <input type="text" name="complemento" id="complemento" placeholder="Complemento" value="<%= user.complemento %>">
+                    <input type="password" name="senha" id="senha" placeholder="Senha" required value="">
+                    <input type="password" name="senhaConfirm" id="senhaConfirm" placeholder="Confirmação de senha" required value="">
                     
                     <div class="botao-salvar">
                         <input type="submit" value="SALVAR ALTERAÇÕES">

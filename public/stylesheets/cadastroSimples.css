@@ -2,7 +2,7 @@ html{
     background-color: rgba(29, 61, 115, 1);
 }
 
-/* LOGIN *//* LOGIN *//* LOGIN */
+/* HEADER */
 .container-header{
     width: 100%;
     display: flex;
@@ -10,22 +10,25 @@ html{
     justify-content: center;
     padding: 30px;
     box-sizing: border-box;
+    
 }
 
 .container-header img{
     height: 200px;
 }
+/* HEADER */
 
+
+/* FORMULÁRIO */
 .title{
     color: rgba(29, 61, 115, 1);
     font-weight: bold;
     font-size: 25px;
 }
 
-/* CONTAINER FORMULARIO */ /* CONTAINER FORMULARIO */ /* CONTAINER FORMULARIO */ 
-.formulario{
-    width: 400px;
-    height: 450px;
+.cadastro{
+    width: 350px;
+    height: 425px;
     padding: 30px 10px 30px 10px;
     box-sizing: border-box;
     background-color: #FFFFFF;
@@ -37,26 +40,18 @@ html{
     margin: auto;
 }
 
-/* INÍCIO FORMULÁRIO */ 
-.container-form{
+.container-form-cadastro{
     width: 90%;
 }
 
-.form{
+.form-cadastro{
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
 }
 
-.form img{
-    max-height: 150px;
-    max-width: 150px;
-    padding: 10px;
-}
-
-
-.form input{
+.form-cadastro input{
     border: 0.5px solid #1D3D73;
     border-radius: 20px;
     box-sizing: border-box;
@@ -67,40 +62,43 @@ html{
     font-size: 15px;
 }
 
-/* ESPAÇO DA FOTO */ 
-.fotoPerfil{
+.fotoCadastro{
     width: 100%;
+    margin-top: 15px;
+    display: flex;
+    justify-content: center;
 }
 
-.fotoPerfil img{
+.fotoCadastro img{
     height: 15px;
 }
 
-.fotoPerfil input{
+.fotoCadastro input{
     display: none;
 }
 
-.fotoPerfil label{
+.fotoCadastro label{
     width: 100%;
+    text-align: left;
     cursor: pointer;
-    /* display: block; */
+    display: block;
     color: rgba(0, 133, 255, 1);
     text-decoration: underline;
-    display: flex;
-    justify-content: center;
-    align-items: center;
 }
 
-/* BOTÃO SALVAR */ 
-.botao-salvar{
-    margin-top: 10px;
+.botaoCadastro{
+    width: 150px;
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items:center;
 }
 
-.botao-salvar input{
-    width: 225px;
+.botaoCadastro:hover input{
+    cursor: pointer;
+}
+
+.botaoCadastro input{
+    width: 150px;
     height: 45px;
     background: #1D3D73;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
@@ -111,41 +109,39 @@ html{
     font-size: 15px;
 }
 
-.botao-salvar input:hover{
-    background: #FFFFFF;
-    color: #1D3D73;
-    cursor: pointer;
-    border: solid 1px #1D3D73;
-}
-
-/* BOTÃO VOLTAR */
-.botao-voltar{
-    margin-top: 10px;
+/* LOGIN REDIRECT */ 
+#loginRedirect{
     text-align: center;
-    margin-right: auto;
-    margin-left: auto;
+    padding: 10px;
+    margin-top: 10px;
 }
 
-.botao-voltar input{
-    width: 100px;
-    height: 30px;
-    background: #1D3D73;
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-    border-radius: 9px;
-    color: #FFFFFF;
-    border: none;
-    font-weight: 400;
-    font-size: 12px;
-}
-
-.botao-voltar input:hover{
-    background: #FFFFFF;
-    color: #1D3D73;
+#loginRedirect a{
+    margin-top: 15px;
     cursor: pointer;
-    border: solid 1px #1D3D73;
+    display: block;
+    color: rgba(0, 133, 255, 1);
+    text-decoration: underline;
 }
+
+
+/* CADASTRO REDIRECT */ 
+#cadastroRedirect{
+    text-align: center;
+    padding: 10px;
+}
+
+#cadastroRedirect a{
+    padding: 10px;
+    cursor: pointer;
+    display: block;
+    color: rgba(0, 133, 255, 1);
+    text-decoration: underline;
+}
+
 
 /* FOOTER *//* FOOTER *//* FOOTER */
+
 #footer-top{
     width: 100%;
     height: 50px;
