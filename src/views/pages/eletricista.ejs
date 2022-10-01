@@ -1,84 +1,88 @@
-<%- include('../partials/header') %>
-
+<!-- HEAD -->
 <head>
     <link href="/stylesheets/styleAgendamento.css" rel="stylesheet">
-    <link href="/stylesheets/calendarioAgendamento.css" rel="stylesheet">
 </head>
+<!-- HEAD -->
 
-<main>
-    <div class="principal">
+<html>
+<!-- HEADER -->
+<%- include('../partials/header') %>
+<!-- HEADER -->
+
+    <main>
 
         <div id="banner">
-            <img id="imagem_servico" src="/images/eletricistaBanner.png" alt="Banner do serviço">
+            <img src="/images/eletricistaBanner.png" alt="Banner do serviço">
         </div>
 
-        <div class="container">
-            <div id="logo_servico">
-                <img id="iconeServico" src="/images/iconeDiarista.png" alt="Icone do serviço">
+        <div class="container-descricao">
+
+            <div id="container-icone">
+                <img src="/images/iconeEncanador.png" alt="Icone do serviço">
             </div>
 
-            <div id="texto_servico">
-                <p class="txt_servico">O profissional diarista é aquele trabalhador que presta serviços ocasionais
-                    para um ou mais contratantes,<b>sem exceder duas vezes na</b><b>semana para cada um.</b></p>
+            <div class="container-texto">
+                <p class="txt_servico">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
+                    et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+                    aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+                    cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
+                    culpa qui officia deserunt mollit anim id est laborum.
+                </p>
             </div>
         </div>
 
-        <!-- div do agende visita, preço e calendário -->
-        <div class="container_dois">
-            <div id="visitante"><img id="img_visitante" src="/images/iconeVisitante.png" alt=""></div>
-            <div>
-                <p class="txt_visita"><b>AGENDE UMA</p>
-                <p class="txt_visita">VISITA</b></p>
-            </div>
-            <div id="preco">
-                <p class="preco"><b>Por apenas R$49,90</b></p>
-                <p class="txt_preco">1 DIÁRIA DE SERVIÇO;</p>
-                <p class="txt_preco">1 PRODUTO BÔNUS.</p><button id="botao_comprar"> COMPRE ESTE SERVIÇO</button>
-            </div>
-        </div>
-        <!-- CALENDARIO -->
-        <div id="ajuste">
-            <div id="container">
-                <div id="header">
-                    <div id="monthDisplay"></div>
-                    <div class="botoes">
-                        <button id="backButton">Voltar</button>
-                        <button id="nextButton">Próximo</button>
+        <div id="container-secundario">
+
+            <div id="left-side">
+                <div id="visita">
+                    <div id="icone">
+                        <img src="/images/iconeVisitante.png" alt="icone de visita"> 
                     </div>
+                    <div id="txt-visita">
+                        <p>AGENDE UMA VISITA</p>
+                    </div>
+                    
                 </div>
 
-                <div id="weekdays">
-                    <div>Dom</div>
-                    <div>Seg</div>
-                    <div>Ter</div>
-                    <div>Qua</div>
-                    <div>Qui</div>
-                    <div>Sex</div>
-                    <div>Sáb</div>
+                <div id="container-agendamento">
+
+                    <div id="titulo-agendamento">
+                        <label for="agendamento">AGENDAMENTO</label>
+                    </div>
+                    
+                    <div id="calendario-agendamento">
+                        <input type="datetime-local" id="agendamento" name="agendamento" min="2022-10-01T08:00"
+                    max="2023-01-30T17:00" required id="calendario-style">
+
+                    </div>
+
+                    <div id="button">
+                        <button type="submit">AGENDAR</button>
+                    </div>
+
                 </div>
-                <!-- div dinamic -->
-                <div id="calendar"></div>
             </div>
-            <div id="newEventModal">
-                <h2>Novo evento</h2>
-                <input id="eventTitleInput" placeholder="digite aqui" />
-                <button id="saveButton"> Salvar</button>
-                <button id="cancelButton">Cancelar</button>
+
+            <div id="right-side">
+                <div id="valor">
+                    <h1>R$ 49,90</h1>                    
+                </div>
+
+                <div id="txt">
+                    <p>PELO PERÍODO DE X HORAS</p>
+                </div>
+
             </div>
-            <div id="deleteEventModal">
-                <h2>Evento</h2>
-                <div id="eventText"></div><br>
-                <button id="deleteButton">Deletar</button>
-                <button id="closeButton">Fechar</button>
-            </div>
-            <div id="modalBackDrop"></div>
         </div>
 
-    </div>
-
-</main>
 
 
-<script src="/javascripts/main.js"></script>
 
-<%- include('../partials/footer') %>
+    </main>
+
+    <!-- FOOTER -->
+    <%- include('../partials/footer') %>
+        <!-- FOOTER -->
+
+</html>
