@@ -7,6 +7,7 @@ const { storage } = require('../config/upload');
 const upload = multer({ storage });
 
 const AuthController = require('../controllers/AuthController');
+const AddressController = require('../controllers/addressController');
 
 //rota para fazer o logout do usuario
 router.post('/logout', AuthController.executeUserLogout);
@@ -25,5 +26,8 @@ router.put('/perfil/edit/:id', upload.single('foto'), AuthController.userEdit);
 
 //rota para deletar um usuário
 router.delete('/perfil/delete/:id', AuthController.userDelete);
+
+// rota para renderizar a página de dendereços
+router.get('/perfil/:id/enderecos', AddressController.renderAddresses);
 
 module.exports = router;

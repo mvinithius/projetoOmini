@@ -39,6 +39,7 @@ const UserController = {
             email,
             senha: hash,
         }
+        console.log('dados da const user:', user)
 
         await Usuario.create(user)
             .then((user) => {
@@ -49,7 +50,7 @@ const UserController = {
 
             })
             .catch((erro) => {
-                console.log('Erro ao criar sessão')
+                console.log('Erro ao criar usuário')
             })
     },
 }

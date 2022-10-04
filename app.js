@@ -55,7 +55,7 @@ app.use('/admin', adminRouter);
 
 // Utiliza o middleware userIsAuthenticated para verificar se o usuário está logado
 // O middleware será executado para todas as rotas abaixo
-// app.use(userIsAuthenticated);
+app.use(userIsAuthenticated);
 
 app.use('/users', privateRouter);
 
