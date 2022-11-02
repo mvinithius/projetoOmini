@@ -1,0 +1,66 @@
+<html>
+
+<%- include('../../partials/header') %>
+    <link rel="stylesheet" href="/stylesheets/creditCardList.css">
+
+    <body>
+        <main>
+            <div class="container-up-div">
+                <div class="btn-voltar">
+                    <a href="/users/minha-conta/">
+                        Voltar
+                    </a>
+                </div>
+
+                <div id="container-addAddress">
+                    <a href="/users/perfil/<%= userId %>/cartoes/adicionar" id="add-link">
+                        <div id="add-img">
+                            <img src="/images/plus-icon.png" alt="">
+                        </div>
+                        <div id="add-text">
+                            Adicione um cartão de crédito
+                        </div>
+                    </a>  
+                </div>                
+            </div>                    
+
+            <div class="container">
+                <% if (cartoes && cartoes.length> 0) { %>
+                    <% cartoes.map(cartao=> { %>
+                        <div class="card">
+                            <div class="label">Identificação:</div>
+                            <div class="data">
+                                <%= cartao.nome_cartao %>
+                            </div>
+                            <div class="label">Bandeira:</div>
+                            <div class="data">
+                                <%= cartao.bandeira %>
+                            </div>
+                            <div class="label">Numero:</div>
+                            <div class="data">
+                                <% let card = cartao.numero.substr(-4, 4) %>
+                                <%= 'XXXX XXXX XXXX ' + card %>
+                            </div>
+                            <div class="label">Expiração:</div>
+                            <div class="data">
+                                <%= cartao.data_expiracao %>
+                            </div>
+                            <div class="card-buttons">
+                                <form method="post" action="/users/perfil/<%= userId %>/cartoes/delete/<%= cartao.id_cartao %>">
+                                    <button class="btn red-flag">Deletar</button>
+                                </form>                            
+                            </div>
+                        </div>
+
+                        <% }) %>
+                            <% } else { %>
+                                <h1> Nenhum cartão cadastrado! </h4>
+                                    <% } %>
+            </div>
+        </main>
+
+    </body>
+
+    <%- include('../../partials/footer') %>
+
+</html>

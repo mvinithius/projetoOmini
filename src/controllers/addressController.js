@@ -47,14 +47,14 @@ const AddressController = {
     renderAddresses: async (req, res) => {
         const userId = req.session.user;
 
-        const usuario = await Usuario.findOne({
+        const endereco = await Usuario.findOne({
             where: {
                 id: userId
             },
             include: 'enderecos'         
         })
 
-        return res.render('pages/users/userAddress', {enderecos: usuario.enderecos, userId} )
+        return res.render('pages/users/userAddress', {enderecos: endereco.enderecos, userId} )
     },
 
     renderEditAddress: async (req, res) => {
@@ -114,8 +114,6 @@ const AddressController = {
         const userId = req.session.user;
 
         const enderecoId = req.params.id;
-
-        console.log('PARAMS ID: ', enderecoId);
 
         const deletar = Endereco.destroy({
             where: {

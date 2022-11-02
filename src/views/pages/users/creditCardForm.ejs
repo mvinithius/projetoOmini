@@ -1,0 +1,27 @@
+<html>
+
+<%- include('../../partials/header') %>
+    <link rel="stylesheet" href="/stylesheets/creditCardForm.css">
+
+    <body>
+        <main>
+            <div class="btn-voltar">
+                <a href="/users/perfil/<%= userId %>/cartoes">
+                    Voltar
+                </a>
+            </div>
+            <form action="/users/perfil/<%= userId %>/cartoes/adicionar" method="post" class="form-container">
+                <h1>Cadastre seu cartão</h1>
+                <input type="text" name="nome_cartao" class="form-input" placeholder="Identificação">
+                <input type="text" name="bandeira" class="form-input" placeholder="Bandeira *">
+                <input type="text" name="numero" class="form-input" placeholder="5555 4444 3333 2222 *">
+                <input type="text" name="data_expiracao" class="form-input" placeholder="11/22 *">
+                <button type="submit" class="btn">Cadastrar</button>
+            </form>
+
+        </main>       
+    </body>
+
+    <%- include('../../partials/footer') %>
+
+</html>
