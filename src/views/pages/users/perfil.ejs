@@ -1,40 +1,47 @@
-<%- include('../../partials/header') %>
+<html>
 
-<link rel="stylesheet" href="/stylesheets/stylePerfil.css">
+    <%- include('../../partials/header') %>
 
-<main>
-    <div id="container-title">
-        <h1 id="title"> ESSE É O SEU PERFIL OMNI</h1>
-    </div>
+    <link rel="stylesheet" href="/stylesheets/stylePerfil.css">
 
-    <div class="container-all">
-        
-        <div class="espacoFoto">
-            <img class="foto" src="/uploads/<%= user.foto %>">
-        </div>         
+        <body>
 
-        <div class="container-formPerfil">
-            <div class="label">Nome</div>
-            <input type="text" readonly value="<%= user.nome %>">
-            <div class="label">E-mail</div>
-            <input type="text" readonly value="<%= user.email %>">
-            <div class="label">Senha</div>
-            <input type="password" readonly value="">
-        </div>
+            <main>
+                <div id="container-title">
+                    <h1 id="title"> ESSE É O SEU PERFIL OMNI</h1>
+                </div>
 
-    </div>
+                <div class="container-all">
 
-    <div id="div-botoes">
-        <a href="edit/<%= user.id %>">
-            <button class="botao" id="normalFlag">EDITAR PERFIL</button>
-        </a>
-        
-        <form method="POST" action="/users/perfil/delete/<%=user.id%>?_method=DELETE">
-            <button class="botao" id="redFlag">EXCLUIR PERFIL</button>
-        </form>
-            
-    </div>
+                    <div class="espacoFoto">
+                        <img class="foto" src="/uploads/<%= user.foto %>">
+                    </div>
 
-</main>
+                    <div class="container-formPerfil">
+                        <div class="label">Nome</div>
+                        <input type="text" readonly value="<%= user.nome %>">
+                        <div class="label">E-mail</div>
+                        <input type="text" readonly value="<%= user.email %>">
+                        <div class="label">Senha</div>
+                        <input type="password" readonly value="">
+                    </div>
 
-<%- include('../../partials/footer') %>
+                </div>
+
+                <div id="div-botoes">
+                    <a href="/users/perfil/edit/<%= user.id %>">
+                        <button class="botao" id="normalFlag">EDITAR PERFIL</button>
+                    </a>
+
+                    <form method="POST" action="/users/perfil/delete/<%=user.id%>?_method=DELETE">
+                        <button class="botao" id="redFlag">EXCLUIR PERFIL</button>
+                    </form>
+
+                </div>
+
+            </main>
+        </body>
+
+    <%- include('../../partials/footer') %>
+
+</html>

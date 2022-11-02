@@ -1,6 +1,5 @@
 /* header e footer: classe auxiliar */
 .content-space{
-    width: 1130px;
     max-width: 1130px;
     margin: 0 auto !important;
 }
@@ -86,10 +85,10 @@
     align-items: center;
     padding-left: 15px;
     box-sizing: border-box;
-    width: 100%;
 }
 
 .footer-information{
+    width: 100%;
     display: flex;
     align-items: center;
     justify-content: space-between;

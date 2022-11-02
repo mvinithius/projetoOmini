@@ -1,5 +1,4 @@
 const { Usuario } = require('../models')
-const { Servico } = require('../models')
 
 const AdminController = {
 

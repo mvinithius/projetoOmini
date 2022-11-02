@@ -1,0 +1,32 @@
+<html>
+
+<%- include('../../partials/header') %>
+    <link rel="stylesheet" href="/stylesheets/addressForm.css">
+
+    <body>
+        <main>
+            <div class="btn-voltar">
+                <a href="/users/perfil/<%= userId %>/enderecos">
+                    Voltar
+                </a>
+            </div>
+            <form action="/users/perfil/<%= userId %>/enderecos/adicionar" method="post" class="form-container">
+                <h1>Cadastre seu endereço</h1>
+                <input type="text" name="nome_endereco" class="form-input" placeholder="Identificação do endereço">
+                <input type="text" name="cep" class="form-input" placeholder="CEP *">
+                <input type="text" name="logradouro" class="form-input" placeholder="Logradouro *">
+                <input type="text" name="numero_casa" class="form-input" placeholder="Nº *">
+                <input type="text" name="complemento" class="form-input" placeholder="Complemento">
+                <input type="text" name="referencia" class="form-input" placeholder="Referência">
+                <input type="text" name="bairro" class="form-input" placeholder="Bairro *">
+                <input type="text" name="cidade" class="form-input" placeholder="Cidade *">
+                <input type="text" name="estado" class="form-input" placeholder="Estado *">
+                <button type="submit" class="btn">Cadastrar</button>
+            </form>
+
+        </main>       
+    </body>
+
+    <%- include('../../partials/footer') %>
+
+</html>

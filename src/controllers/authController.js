@@ -12,7 +12,7 @@ const AuthController = {
         const userId  = req.session.user;
 
         // busca pelos dados do usuário no banco de dados
-        const {id, nome, email} = await Usuario.findByPk(userId);
+        const { id, nome, email} = await Usuario.findByPk(userId);
 
         // armazena os dados do usuário
         const user = { id, nome, email }  
@@ -21,7 +21,7 @@ const AuthController = {
         res.render('pages/users/perfil', { user });
     },
 
-    //renderiza dados do usuário na página de atualização de perfil
+    //renderiza dados do usuário no formulário de edição de perfil
     renderEditForm: async (req, res) => {
         
         const userId  = req.session.user;
@@ -44,12 +44,12 @@ const AuthController = {
         // checa se a senha é igual nos dois campos
         if(senha != senhaConfirm){
             // armazena os dados do usuário para passar no retorno
-            const {nome, email}  = await Usuario.findByPk(id);
+            let {id, nome, email}  = await Usuario.findByPk(userId);
+
+            let user = {id, nome, email};
 
             // se a senha não for igual, renderiza a página com msg de erro
-            res.render('pages/users/perfilEdit', {user, error: 'Senha não coincide'});
-
-            return
+            return res.render('pages/users/perfilEdit', {user, error: 'Senha não coincide'});
         }
 
         
@@ -94,16 +94,13 @@ const AuthController = {
             //se a senha for inválida, renderiza a página de login com erro
             return res.render('pages/users/login', {error: 'Email ou senha inválidos'});
         }
-        console.log('checagem de senha ok')
 
         // Se o email e a senha forem válidos, cria uma sessão para o usuário salvando o ID do usuário
         req.session.user = user.id
-        console.log('salvado o id do usuário para sessão OK:', user.id)
 
         req.session.save(() => {
             res.redirect('minha-conta')
         })
-        console.log('redirecionando pra área restrita OK');
     },
 
     executeUserLogout: (req, res) => {
@@ -122,13 +119,13 @@ const AuthController = {
            // Se estiver logado, armazena o id do usuário
             const userId  = req.session.user;
 
-            // busca e armazena pelo nome e email no db
-            const {id, nome, email} = await Usuario.findByPk(userId);
+            // busca e armazena os dados do usuario
+            const { id, nome, email } = await Usuario.findByPk(userId);
 
-            const user = { id, nome, email };
+            const user = {id, nome, email};
             
-        //   redireciona para a página restrita
-          return res.redirect('minha-conta', { user });
+            // redireciona para a página restrita
+            return res.render('pages/users/userDashboard', { user });
         }
     
         // se não estiver logado, redireciona para a página de login
@@ -139,7 +136,6 @@ const AuthController = {
     renderAreaRestrita: async (req, res) => {
         // Armazena o ID do usuário da sessão
         const userId  = req.session.user;
-        console.log('ID DO USUÁRIO - AREA RESTRITA: ', userId);
 
         // busca pelo nome do usuário no banco de dados com o ID 
         const { id, nome, email } = await Usuario.findByPk(userId);

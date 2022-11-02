@@ -11,9 +11,7 @@ const UserController = {
     },
 
     //executa a criação do usuário
-    UserCreate: async (req, res) => {
-        console.log(req.body);
-        
+    UserCreate: async (req, res) => {        
         const {nome, email, senha, senhaConfirm} = req.body;
         // const foto = req.file.filename;
 
@@ -39,6 +37,7 @@ const UserController = {
             email,
             senha: hash,
         }
+        console.log('dados da const user:', user)
 
         await Usuario.create(user)
             .then((user) => {
@@ -49,7 +48,7 @@ const UserController = {
 
             })
             .catch((erro) => {
-                console.log('Erro ao criar sessão')
+                console.log('Erro ao criar usuário')
             })
     },
 }

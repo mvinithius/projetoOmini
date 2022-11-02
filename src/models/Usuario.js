@@ -1,25 +1,22 @@
-const { DataTypes } = require('sequelize')
-
-
-module.exports = (sequelize, DataTypes) => {
+module.exports = (sequelize, DataType) => {
 
     const Usuario =  sequelize.define('Usuario', {
         id: {
-            type: DataTypes.INTEGER,
+            type: DataType.INTEGER,
             primaryKey: true,
             autoIncrement: true,
             allowNull: false
         },
         nome: {
-            type: DataTypes.STRING,
+            type: DataType.STRING,
             allowNull: false
         },
         email: {
-            type: DataTypes.STRING,
+            type: DataType.STRING,
             allowNull: false,
         },
         senha: {
-            type: DataTypes.STRING,
+            type: DataType.STRING,
             allowNull: false
         }
     },
@@ -27,6 +24,13 @@ module.exports = (sequelize, DataTypes) => {
         tableName: 'usuarios',
         timestamps: false
     })
+
+    Usuario.associate = (listaDeModelos) => {
+        Usuario.hasMany(listaDeModelos.Endereco, {
+            foreignKey: 'fk_usuario',
+            as: 'enderecos'
+        })
+    }
 
     return Usuario
 }

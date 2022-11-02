@@ -1,0 +1,88 @@
+<html>
+
+<%- include('../../partials/header') %>
+    <link rel="stylesheet" href="/stylesheets/userAddress.css">
+
+    <body>
+        <main>
+            <div class="container-up-div">
+                <div class="btn-voltar">
+                    <a href="/users/minha-conta/">
+                        Voltar
+                    </a>
+                </div>
+
+                <div id="container-addAddress">
+                    <a href="enderecos/adicionar" id="add-link">
+                        <div id="add-img">
+                            <img src="/images/plus-icon.png" alt="">
+                        </div>
+                        <div id="add-text">
+                            Adicione um endereço
+                        </div>
+                    </a>  
+                </div>                
+            </div>                    
+
+            <div class="container">
+                <% if (enderecos && enderecos.length> 0) { %>
+                    <% enderecos.map(endereco=> { %>
+                        <div class="card">
+                            <div class="label">Identificação:</div>
+                            <div class="data">
+                                <%= endereco.nome_endereco %>
+                            </div>
+                            <div class="label">CEP:</div>
+                            <div class="data">
+                                <%= endereco.cep %>
+                            </div>
+                            <div class="label">Logradouro:</div>
+                            <div class="data">
+                                <%= endereco.logradouro %>
+                            </div>
+                            <div class="label">Nº:</div>
+                            <div class="data">
+                                <%= endereco.numero_casa %>
+                            </div>
+                            <div class="label">Complemento:</div>
+                            <div class="data">
+                                <%= endereco.complemento %>
+                            </div>
+                            <div class="label">Referência:</div>
+                            <div class="data">
+                                <%= endereco.referencia %>
+                            </div>
+                            <div class="label">Bairro:</div>
+                            <div class="data">
+                                <%= endereco.bairro %>
+                            </div>
+                            <div class="label">Cidade:</div>
+                            <div class="data">
+                                <%= endereco.cidade %>
+                            </div>
+                            <div class="label">Estado:</div>
+                            <div class="data">
+                                <%= endereco.estado %>
+                            </div>
+                            <div class="card-buttons">
+                                <a href="/users/perfil/<%= userId %>/enderecos/editar/<%= endereco.id_endereco %>">
+                                    <button class="btn white-flag">Editar</button>
+                                </a>
+                                <form method="post" action="/users/perfil/<%= userId %>/enderecos/delete/<%= endereco.id_endereco %>">
+                                    <button class="btn red-flag">Deletar</button>
+                                </form>                            
+                            </div>
+                        </div>
+
+                        <% }) %>
+                            <% } else { %>
+                                <h1> Nenhum endereço cadastrado! </h4>
+                                    <% } %>
+            </div>
+        </main>
+
+    </body>
+
+    <%- include('../../partials/footer') %>
+
+</html>
