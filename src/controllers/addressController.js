@@ -57,19 +57,18 @@ const AddressController = {
         return res.render('pages/users/userAddress', {enderecos: usuario.enderecos, userId} )
     },
 
-    renderEditAddress: (req, res) => {
+    renderEditAddress: async (req, res) => {
         const userId = req.session.user;
 
         const enderecoId = req.params.id;
 
-        const endereco = Endereco.findOne({
+        const endereco = await Endereco.findOne({
             where: {
                 id_endereco: enderecoId
             }
         })
-
-        .then(() => {res.redirect('pages/users/editAddress', {endereco, userId})})
-        .catch((error) => console.log(error))
+        
+        res.render('pages/users/editAddress', {endereco: endereco, userId})
     },
 
     editAddress: (req, res) => {

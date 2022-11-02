@@ -10,20 +10,18 @@
                     Voltar
                 </a>
             </div>
-            <form action="" method="post" class="form-container">
+            <form action="/users/perfil/<%= userId %>/enderecos/editar/<%= endereco.id_endereco %>" method="post" class="form-container">
                 <h1>Atualize seu endereço</h1>
-                <input type="text" name="nome_endereco" class="form-input" value ="<%= endereco.nome_endereco%>">
-                <input type="text" name="cep" class="form-input" value ="<%= endereco.cep%>">
-                <input type="text" name="logradouro" class="form-input" value ="<%= endereco.logradouro%>">
-                <input type="text" name="numero_casa" class="form-input" value ="<%= endereco.numero_casa%>">
-                <input type="text" name="complemento" class="form-input" value ="<%= endereco.complemento%>">
-                <input type="text" name="referencia" class="form-input" value ="<%= endereco.referencia%>">
-                <input type="text" name="bairro" class="form-input" value ="<%= endereco.bairro%>">
-                <input type="text" name="cidade" class="form-input" value ="<%= endereco.cidade%>">
-                <input type="text" name="estado" class="form-input" value ="<%= endereco.estado%>">
-                <a href="/perfil/<%= userId %>/enderecos/editar/<%= endereco.id_endereco %>">
-                    <button type="submit" class="btn">Atualizar</button>
-                </a>
+                <input type="text" name="nome_endereco" class="form-input" value="<%= endereco.nome_endereco%>">
+                <input type="text" name="cep" class="form-input" value="<%= endereco.cep%>">
+                <input type="text" name="logradouro" class="form-input" value="<%= endereco.logradouro%>">
+                <input type="text" name="numero_casa" class="form-input" value="<%= endereco.numero_casa%>">
+                <input type="text" name="complemento" class="form-input" value="<%= endereco.complemento%>">
+                <input type="text" name="referencia" class="form-input" value="<%= endereco.referencia%>">
+                <input type="text" name="bairro" class="form-input" value="<%= endereco.bairro%>">
+                <input type="text" name="cidade" class="form-input" value="<%= endereco.cidade%>">
+                <input type="text" name="estado" class="form-input" value="<%= endereco.estado%>">
+                <button type="submit" class="btn">Atualizar</button>
             </form>
 
         </main>       
