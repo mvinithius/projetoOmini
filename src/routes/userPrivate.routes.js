@@ -8,6 +8,7 @@ const upload = multer({ storage });
 
 const AuthController = require('../controllers/AuthController');
 const AddressController = require('../controllers/addressController');
+const CreditCardController = require('../controllers/creditCardController');
 
 //rota para fazer o logout do usuario
 router.post('/logout', AuthController.executeUserLogout);
@@ -48,5 +49,21 @@ router.post('/perfil/:id/enderecos/editar/:id', AddressController.editAddress);
 
 // rota para atualizar o endereço
 router.post('/perfil/:id/enderecos/delete/:id', AddressController.deleteAddress);
+
+// ======
+// CARTOES
+// =======
+
+// rota para renderizar lista de cartões
+router.get('/perfil/:id/cartoes', CreditCardController.renderCreditCardList)
+
+// rota para renderizar o formulário de cadastro de cartões
+router.get('/perfil/:id/cartoes/adicionar', CreditCardController.renderCreditCardForm);
+
+// rota para cadastrar novos cartões
+router.post('/perfil/:id/cartoes/adicionar', CreditCardController.addCreditCard);
+
+// rota para excluir um cartão
+router.post('/perfil/:id/cartoes/delete/:id', CreditCardController.deleteCreditCard) ;
 
 module.exports = router;
