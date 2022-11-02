@@ -101,7 +101,6 @@ const AuthController = {
         req.session.save(() => {
             res.redirect('minha-conta')
         })
-        console.log('redirecionando pra área restrita OK');
     },
 
     executeUserLogout: (req, res) => {
@@ -123,7 +122,7 @@ const AuthController = {
             // busca e armazena os dados do usuario
             const { id, nome, email } = await Usuario.findByPk(userId);
 
-            const user = {id, nome, email };
+            const user = {id, nome, email};
             
             // redireciona para a página restrita
             return res.render('pages/users/userDashboard', { user });

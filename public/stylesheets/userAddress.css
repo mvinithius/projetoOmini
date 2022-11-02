@@ -1,0 +1,113 @@
+main{
+    width: 80%;
+    margin: 0 auto;
+}
+
+h1{
+    margin: 0 auto;
+    padding: 80px;
+}
+
+.container-up-div{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+.btn-voltar{
+    padding-left: 30px;
+    font-size: 30px;
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+#container-addAddress{
+    max-width: 230px
+}
+
+#add-link{
+    text-decoration: none;
+    color: #1D3D73;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    row-gap: 5px;
+    column-gap: 5px;
+}
+
+#add-img img{
+    max-width: 30px;
+}
+
+#add-text{
+    font-size: 20px;
+    font-weight: 800;
+}
+
+.container{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+    row-gap: 30px;
+    column-gap: 30px;
+}
+
+.card{
+    border-radius: 10px;
+    border: 1.5px solid #1D3D73;
+    padding: 20px;
+    margin-top: 30px;
+    width: 300px;
+    box-sizing: border-box;
+}
+
+.label{
+    color: #1D3D73;
+    font-size: 15px;
+    font-weight: 800;
+    margin-top: 5px;
+    padding: 3px;
+}
+
+.data{
+    color: #1D3D73;
+    font-size: 15px;
+    font-weight: 400;
+    border: 1px solid #1D3D73;
+    margin-top: 10px 0 10px 0;
+    padding: 3px;
+}
+
+.card-buttons{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    margin-top: 15px;
+}
+
+.btn{
+    background-color: #1D3D73;
+    border: none;
+    color: #FFFFFF;
+    font-size: 17px;
+    cursor: pointer;
+    border-radius: 10px;
+    padding: 10px;
+    width: 80px;
+    height: 40px;
+    box-sizing: border-box;
+}
+
+.white-flag:hover{
+    background-color: #FFFFFF;
+    color: #1D3D73;
+    border: solid 1px #1D3D73;
+}
+
+.red-flag:hover{
+    background-color: red;
+}
+

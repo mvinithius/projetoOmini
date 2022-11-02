@@ -25,11 +25,9 @@ module.exports = (sequelize, DataType) => {
         },
         complemento: {
             type: DataType.STRING,
-            allowNull: true,
         },
         referencia: {
             type: DataType.STRING,
-            allowNull: true,
         },
         bairro: {
             type: DataType.STRING,
@@ -45,7 +43,6 @@ module.exports = (sequelize, DataType) => {
         },
         fk_usuario: {
             type: DataType.INTEGER,
-            allowNull: false,
         }
     },
     {
@@ -54,10 +51,10 @@ module.exports = (sequelize, DataType) => {
     })
 
     Endereco.associate = (listaDeModelos) => {
-        Endereco.belongsTo(listaDeModelos.Usuario),{
+        Endereco.belongsTo(listaDeModelos.Usuario,{
             foreignKey: 'fk_usuario',
             as: 'usuario'
-        }
+        })
     }
 
     return Endereco

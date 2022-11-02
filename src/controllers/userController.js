@@ -11,9 +11,7 @@ const UserController = {
     },
 
     //executa a criação do usuário
-    UserCreate: async (req, res) => {
-        console.log(req.body);
-        
+    UserCreate: async (req, res) => {        
         const {nome, email, senha, senhaConfirm} = req.body;
         // const foto = req.file.filename;
 

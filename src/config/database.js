@@ -1,7 +1,7 @@
 // configuração do banco
 const config = {
     username: 'root',
-    password: '',
+    password: '12345',
     database: 'omnihouse',
     host: 'localhost',
     dialect: 'mysql'

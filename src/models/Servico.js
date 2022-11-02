@@ -1,7 +1,7 @@
 module.exports = (sequelize, DataType) => {
 
     const Servico =  sequelize.define('Servico', {
-        id: {
+        id_servico: {
             type: DataType.INTEGER,
             primaryKey: true,
             autoIncrement: true,
@@ -11,14 +11,14 @@ module.exports = (sequelize, DataType) => {
             type: DataType.STRING,
             allowNull: false
         },
-        descricao: {
-            type: DataType.STRING,
-            allowNull: false,
-        },
         valor: {
             type: DataType.STRING,
             allowNull: false
         },
+        descricao: {
+            type: DataType.STRING,
+            allowNull: false,
+        }        
     },
     {
         tableName: 'servicos',

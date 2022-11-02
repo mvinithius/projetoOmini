@@ -18,18 +18,6 @@ module.exports = (sequelize, DataType) => {
         senha: {
             type: DataType.STRING,
             allowNull: false
-        },
-        fk_cartao: {
-            type: DataType.INTEGER,
-            allowNull: true
-        },
-        fk_compra: {
-            type: DataType.INTEGER,
-            allowNull: true
-        },
-        fk_endereco: {
-            type: DataType.INTEGER,
-            allowNull: true
         }
     },
     {
