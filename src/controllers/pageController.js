@@ -1,11 +1,16 @@
+const { Servico } = require('../models');
+
 const PageController = {
 
     home: (req, res) => {
         res.render('pages/home')
     },
 
-    servicos: (req, res) => {
-        res.render('pages/servicos')
+    servicos: async (req, res) => {
+       
+        const servicos =  await Servico.findAll();
+            
+        return res.render('pages/servicos', { servicos })
     },
 
     diarista: (req, res) => {
@@ -38,12 +43,7 @@ const PageController = {
 
     montador: (req, res) => {
         res.render('pages/montador')
-    },
-    
-    carrinho: (req, res) => {
-        res.render('pages/carrinho')
-    },
-
+    }
 }
 
 module.exports = PageController

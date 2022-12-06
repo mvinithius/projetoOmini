@@ -1,5 +1,9 @@
 const { Servico } = require('../models')
 
+const fs = require('fs');
+
+const { uploadPath } = require('../config/upload');
+
 const ServiceController = {
     
     renderServiceList: async (req, res) => {
@@ -15,14 +19,16 @@ const ServiceController = {
     addService: async (req, res) => {
         const { titulo, descricao, valor } = req.body;
 
-        const service = { titulo, descricao, valor };
+        const imagem = req.file.filename;
+
+        const service = { titulo, descricao, valor, imagem};
         
         await Servico.create(service);
 
         return res.redirect('ServiceList');    
     },
 
-    // renderiza os dados do serviço (perfil de serviço)
+    // renderiza os dados do serviço (pag do serviço)
     showService: async (req, res) => {
         const { id } = req.params;
 
@@ -43,19 +49,32 @@ const ServiceController = {
     // edita os dados do serviço
     editService: async (req, res) => {
         const { id } = await req.params;
-        
         const service = await Servico.findByPk(id);
         
         const {titulo, descricao, valor} = await req.body;
+        const imagem = req.file.filename;
+
+        if (imagem != undefined){
+            if(service.imagem != ''){
+                fs.unlink(`${uploadPath}/${service.imagem}`, (error) =>{
+                    if(error){
+                        console.log("Erro ao excluir imagem");
+                    } else {
+                        console.log("Imagem excluída");
+                    }
+                });
+            }
+        } 
 
         const resultado = await Servico.update({
             titulo,
             descricao,
-            valor
+            valor,
+            imagem
         },
         {
             where: {
-                id: service.id
+                id_servico: id
             }
         })
 
@@ -63,13 +82,21 @@ const ServiceController = {
     },
 
     deleteService: async (req, res) => {
-        const { id } = await req.params; 
+        const { id } = req.params; 
         
         const service = await Servico.findByPk(id)
 
+        fs.unlink(`${uploadPath}/${service.imagem}`, (error) =>{
+            if(error){
+                console.log("Erro ao excluir imagem");
+            } else {
+                console.log("Imagem excluída");
+            }
+        });
+
         const deletar = await Servico.destroy({
             where: {
-                id: service.id
+                id_servico: id
             }
         });
 

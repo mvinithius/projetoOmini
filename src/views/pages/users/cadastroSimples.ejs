@@ -31,25 +31,22 @@
             
             <div class="container-form-cadastro">
 
-                <form method="POST" 
-                action="/users/cadastro" 
-                enctype="multipart/form-data" 
-                class="form-cadastro"
-            >
+                <form method="POST" action="/users/cadastro" enctype="multipart/form-data" class="form-cadastro">
                     <p style="color: red">
                         <%= error ? error : '' %>
                     </p>
-                    <input type="text" name="nome" id="nome" placeholder="Nome completo" required>
-                    <input type="email" name="email" id="email" placeholder="E-mail" required>
-                    <input type="password" name="senha" id="senha" placeholder="Senha" required>
-                    <input type="password" name="senhaConfirm" id="senhaConfirm" placeholder="Confirmação de senha" required>
+                    <input type="text" name="nome" id="nome" placeholder="Nome completo*" required>
+                    <input type="email" name="email" id="email" placeholder="E-mail*" required>
+                    <input type="password" name="senha" id="senha" placeholder="Senha*" required>
+                    <input type="password" name="senhaConfirm" id="senhaConfirm" placeholder="Confirmação de senha*" required>
                     
                     <div class="fotoCadastro">
-                        <label for="foto">
-                            <img src="/images/iconeAnexo.png">Adicione sua foto de perfil
+                        <label for="avatar">
+                            <img src="/images/iconeAnexo.png">Adicione sua foto de perfil*
+                            <input type="file" name="avatar" id="avatar">
                         </label>
-                        <input type="file" name="foto" id="foto">
-                        </div>
+                            
+                    </div>
                         <div class="botaoCadastro">
                             <input type="submit" value="CADASTRE-SE">
                         </div>

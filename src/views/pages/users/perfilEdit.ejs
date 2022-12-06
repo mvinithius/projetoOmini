@@ -31,27 +31,24 @@
             
             <div class="container-form">
 
-                <form method="POST" 
-                action="/users/perfil/edit/<%= user.id %>?_method=PUT" 
-                enctype="multipart/form-data" 
-                class="form"
-                >
-                    <img src="/uploads/<%= user.foto %>">
+                <form method="POST" action="/users/perfil/edit/<%= user.id %>?_method=PUT" enctype="multipart/form-data" class="form">
+                    
+                    <img src="/uploads/<%= user.avatar %>">
 
                     <div class="fotoPerfil">
                         <label for="foto">
-                            <img src="/images/iconeAnexo.png">Atualize a sua foto
+                            <img src="/images/iconeAnexo.png">Atualize a sua foto*
                         </label>
-                        <input type="file" name="foto" id="foto">
+                        <input type="file" name="avatar" id="foto" required>
                     </div>
                     <p style="color: red">
                         <%= error ? error : '' %>
                     </p>                    
 
-                    <input type="text" name="nome" id="nome" placeholder="Nome completo" required value="<%= user.nome %>">
-                    <input type="email" name="email" id="email" placeholder="E-mail" required value="<%= user.email %>">
-                    <input type="password" name="senha" id="senha" placeholder="Senha" required value="">
-                    <input type="password" name="senhaConfirm" id="senhaConfirm" placeholder="Confirmação de senha" required value="">
+                    <input type="text" name="nome" id="nome" placeholder="Nome completo*" value="<%= user.nome %>" required>
+                    <input type="email" name="email" id="email" placeholder="E-mail*"  value="<%= user.email %>" required>
+                    <input type="password" name="senha" id="senha" placeholder="Senha*" required>
+                    <input type="password" name="senhaConfirm" id="senhaConfirm" placeholder="Confirmação de senha*" required>
                     
                     <div class="botao-salvar">
                         <input type="submit" value="SALVAR ALTERAÇÕES">

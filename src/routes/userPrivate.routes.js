@@ -23,7 +23,7 @@ router.get('/perfil/:id', AuthController.renderUserPerfil);
 router.get('/perfil/edit/:id', AuthController.renderEditForm);
 
 //rota para atualizar os dados do usuário
-router.put('/perfil/edit/:id', upload.single('foto'), AuthController.userEdit);
+router.put('/perfil/edit/:id', upload.single('avatar'), AuthController.userEdit);
 
 //rota para deletar um usuário
 router.delete('/perfil/delete/:id', AuthController.userDelete);

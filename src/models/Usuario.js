@@ -13,11 +13,15 @@ module.exports = (sequelize, DataType) => {
         },
         email: {
             type: DataType.STRING,
-            allowNull: false,
+            allowNull: false
         },
         senha: {
             type: DataType.STRING,
             allowNull: false
+        },
+        avatar: {
+            type: DataType.BLOB('long'),
+            allowNull: true
         }
     },
     {

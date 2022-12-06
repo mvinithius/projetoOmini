@@ -4,16 +4,16 @@ const multer = require('multer');
 
 const { storage } = require('../config/upload');
 
+const upload = multer({ storage });
+
 const UserController = require('../controllers/UserController');
 const AuthController = require('../controllers/AuthController');
-
-const upload = multer({ storage });
 
 //renderiza a página de cadastro
 router.get('/cadastro', UserController.renderFormCadastro);
 
 //rota para criar o cadastro
-router.post('/cadastro', upload.single('foto'), UserController.UserCreate);
+router.post('/cadastro', upload.single('avatar'), UserController.UserCreate);
 
 //renderiza a página de login
 router.get('/login', AuthController.renderUserFormLogin);

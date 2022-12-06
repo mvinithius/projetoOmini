@@ -18,7 +18,10 @@ module.exports = (sequelize, DataType) => {
         descricao: {
             type: DataType.STRING,
             allowNull: false,
-        }        
+        },
+        imagem: {
+            type: DataType.STRING,
+        }
     },
     {
         tableName: 'servicos',

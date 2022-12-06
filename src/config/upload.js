@@ -1,5 +1,5 @@
 const multer = require('multer');
-const { v4 } = require('uuid');
+const path = require('path');
 
 const uploadPath = 'public/uploads';
 
@@ -11,7 +11,8 @@ module.exports = {
             callback(null, uploadPath);
         },
         filename: (request, file, callback) => {
-            const filename = `${v4()}-${file.originalname}`;
+            const time = new Date().getTime();
+            const filename = `${time}_${file.originalname}`;
             callback(null, filename);
         }
     }),
