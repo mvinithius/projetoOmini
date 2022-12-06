@@ -1,6 +1,9 @@
-const { Usuario } = require('../models')
+const { Usuario } = require('../models');
+
+const fs = require('fs');
 
 const bcrypt = require('bcrypt');
+const { uploadPath } = require('../config/upload');
 
 const saltRounds = 10;
 
@@ -12,10 +15,10 @@ const AuthController = {
         const userId  = req.session.user;
 
         // busca pelos dados do usuário no banco de dados
-        const { id, nome, email} = await Usuario.findByPk(userId);
+        const { id, nome, email, avatar} = await Usuario.findByPk(userId);
 
         // armazena os dados do usuário
-        const user = { id, nome, email }  
+        const user = { id, nome, email, avatar }  
 
         // renderiza a pagina de perfil passando os dados do usuario 
         res.render('pages/users/perfil', { user });
@@ -26,47 +29,64 @@ const AuthController = {
         
         const userId  = req.session.user;
 
-        const { id, nome, email } = await Usuario.findByPk(userId);
+        const { id, nome, email , avatar} = await Usuario.findByPk(userId);
         
-        const user = { id, nome, email };
+        const user = { id, nome, email , avatar};
 
         res.render('pages/users/perfilEdit', { user, error: null });
     },
- 
+
     // edita os dados do usuário
     userEdit: async (req, res) => {
         // armazena o id do usuário da sessão
         const userId = req.session.user;
 
+        const user = await Usuario.findByPk(userId);
+        
         // recebe e armazena os dados do formulário de edição
         const { nome, email, senha, senhaConfirm } = req.body;
+
+        const avatar = req.file.filename;
+
+        if (avatar != undefined){
+            if(user.avatar != ''){
+                fs.unlink(`${uploadPath}/${user.avatar}`, (error) =>{
+                    if(error){
+                        console.log("Erro ao excluir avatar");
+                    } else {
+                        console.log("Avatar excluído");
+                    }
+                });
+            } else {
+                console.log('Não existe avatar pra excluir')
+            }           
+        } 
 
         // checa se a senha é igual nos dois campos
         if(senha != senhaConfirm){
             // armazena os dados do usuário para passar no retorno
-            let {id, nome, email}  = await Usuario.findByPk(userId);
-
-            let user = {id, nome, email};
+            let user  = await Usuario.findByPk(userId);
 
             // se a senha não for igual, renderiza a página com msg de erro
             return res.render('pages/users/perfilEdit', {user, error: 'Senha não coincide'});
         }
-
-        
+    
         // criptografia da senha
-        const hash = bcrypt.hashSync(senha, saltRounds);
-
+        const hash = bcrypt.hashSync(senha, saltRounds);  
+        
         // executa a atualização de dados
         const atualizacao = await Usuario.update({
             nome,
             email,
             senha: hash,
+            avatar
         },
         {
             where: {
                 id: userId
             }
         })
+     
         
         // redireciona pro dashboard do usuário
         return res.redirect('/users/minha-conta')
@@ -150,6 +170,17 @@ const AuthController = {
     userDelete: async (req, res) => {
         // armazena o id do usuário
         const userId = req.session.user;
+
+        const user = await Usuario.findByPk(userId);
+        
+        // exclusão do avatar do /uploads/
+        fs.unlink(`${uploadPath}/${user.avatar}`, (error) =>{
+            if(error){
+                console.log("Erro ao excluir avatar");
+            } else {
+                console.log("Avatar excluído");
+            }
+        });
 
         // deleta o usuário com base no id
         const deletar = await Usuario.destroy({

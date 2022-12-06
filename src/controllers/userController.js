@@ -13,7 +13,7 @@ const UserController = {
     //executa a criação do usuário
     UserCreate: async (req, res) => {        
         const {nome, email, senha, senhaConfirm} = req.body;
-        // const foto = req.file.filename;
+        const avatar = req.file.filename;
 
         if(senha != senhaConfirm){
             res.render('pages/users/cadastroSimples', {error: 'Senha não coincide'});
@@ -30,13 +30,16 @@ const UserController = {
         if (checkIfUserExists) {
             return res.render('pages/users/cadastroSimples', {error: 'E-mail já cadastrado'})
         }
-       
+
         // armazena os dados do usuario
         const user = {
             nome,
             email,
             senha: hash,
+            avatar
         }
+        
+        // imprime os dados do usuario no console
         console.log('dados da const user:', user)
 
         await Usuario.create(user)

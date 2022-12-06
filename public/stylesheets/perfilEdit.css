@@ -25,7 +25,7 @@ html{
 /* CONTAINER FORMULARIO */ /* CONTAINER FORMULARIO */ /* CONTAINER FORMULARIO */ 
 .formulario{
     width: 400px;
-    height: 450px;
+    min-height: 450px;
     padding: 30px 10px 30px 10px;
     box-sizing: border-box;
     background-color: #FFFFFF;
@@ -50,8 +50,8 @@ html{
 }
 
 .form img{
-    max-height: 150px;
-    max-width: 150px;
+    max-height: 50px;
+    max-width: 50px;
     padding: 10px;
 }
 

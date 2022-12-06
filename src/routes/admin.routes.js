@@ -1,5 +1,10 @@
 var express = require('express');
 var router = express.Router();
+const multer = require('multer');
+
+const { storage } = require('../config/upload');
+
+const upload = multer({ storage });
 
 const ServiceController = require('../controllers/serviceController')
 const AuthController = require('../controllers/authController')
@@ -20,7 +25,7 @@ router.get('/ServiceList', ServiceController.renderServiceList);
 router.get('/adicionarServico', ServiceController.renderServiceForm);
 
 // rota para adicionar novo serviço
-router.post('/adicionarServico', ServiceController.addService);
+router.post('/adicionarServico', upload.single('imagem'), ServiceController.addService);
 
 // rota para renderizar a página do serviço
 router.get('/servico/:id', ServiceController.showService)
@@ -29,7 +34,7 @@ router.get('/servico/:id', ServiceController.showService)
 router.get('/editarServico/:id', ServiceController.renderServiceEditForm);
 
 // rota para atualizar os dados do serviço
-router.put('/editarServico/:id', ServiceController.editService);
+router.put('/editarServico/:id', upload.single('imagem'), ServiceController.editService);
 
 // rota para deletar o serviço
 router.delete('/deletarServico/:id', ServiceController.deleteService);

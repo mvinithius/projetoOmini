@@ -1,6 +1,10 @@
 const CartController = {
     
-    addToCart: (req, res) => {
+    showCart: (req, res) => {
+        res.render('pages/carrinho');
+    },
+
+    addToCart: async (req, res) => {
 
     },
 

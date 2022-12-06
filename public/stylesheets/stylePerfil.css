@@ -23,13 +23,12 @@
     padding: 30px;
     
     max-width: 45%;
-    max-height: 40%;
     box-sizing: border-box;
     
     border: 0.2px solid rgba(29, 61, 115, 1);
 }
 
-.foto{
+.avatar{
     max-height: 180px;
     max-width: 250px;
     text-align: center;
