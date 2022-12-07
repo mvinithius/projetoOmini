@@ -10,6 +10,7 @@ main {
     line-height: 29px;
     text-align: left;
     padding: 30px 0 15px 0;
+    color: #1D3D73;
 }
 
 #container-conteudo{
@@ -57,6 +58,7 @@ main {
     text-align: left;
     padding: 15px 0 30px 0;
     width: 100%;
+    color: #1D3D73;
 }
 
 .opcoes:hover{

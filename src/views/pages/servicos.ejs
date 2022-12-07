@@ -31,17 +31,16 @@
                             </div>
 
                             <div>
-                                    <form action="" method="post" class="button-comprar">                             
-                                        <button type="submit">
-                                            <div class="button-cart">
-                                                <img src="/images/cartIcon.png">                                            
-                                            </div>
-                                            <p>
-                                                Contrate o serviço
-                                            </p>
-                                            
-                                        </button>
-                                    </form>
+                                <form action="/carrinho/adicionar/<%= servico.id_servico %>" method="post" class="button-comprar">
+                                    <button type="submit">
+                                        <div class="button-cart">
+                                            <img src="/images/cartIcon.png">
+                                        </div>
+                                        <p>
+                                            Contrate o serviço
+                                        </p>
+                                    </button>
+                                </form>
                             </div>
 
 

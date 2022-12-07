@@ -17,25 +17,87 @@
 
             <section class="product-list">
 
-                <div class="card">
-                    <img src="">
+                <% if(carrinho && carrinho.length> 0){ %>
+                    <% carrinho.map(servico=> { %>
+                        <div class="card">
 
-                    <div class="card-title">
+                            <div class="service-image">
+                                <img src="/uploads/<%= servico.imagem %>">
+                            </div>
 
-                    </div>
+                            <div class="service-information">
+                                <!-- <div class="card-title">ID: <%= servico.id_servico %></div> -->
 
-                    <div class="card-text">
+                                <div class="card-title">Serviço de <%= servico.titulo %>
+                                </div>
 
-                    </div>
+                                <!-- <div class="card-description">Descrição: <%= servico.descricao %> </div> -->
 
-                    <div class="card-value">
+                                <div class="card-quant">
 
-                    </div>
+                                    <div class="text-quant">
+                                        Quant.
+                                    </div>
+
+                                    <div class="quant-manager">
+                                        <form action="/carrinho/diminuir/:id" method="post" class="substract">
+                                            <button type="submit">
+                                                <img src="/images/minusIcon.png">
+                                            </button>
+                                        </form>
+    
+                                        <input type="number" name="quantidade" class="quantidade"
+                                            value="<%= servico.quantidade %>" min="1" max="9" maxlength="1" readonly>
+    
+                                        <form action="/carrinho/aumentar/:id" method="post" class="add">
+                                            <button type="submit">
+                                                <img src="/images/plusIcon.png">
+                                            </button>
+                                        </form>
+
+                                    </div>                                 
+
+                                </div>
+
+                                <div class="card-value">                       
+                                    R$ <%= servico.valor %>
+                                </div>
+
+                                <div class="remove-item">
+                                    <form action="/carrinho/remover/:id/<%= servico.id %>" method="post">
+                                        <button type="submit">
+                                            <img src="/images/removeFromCart.png">
+                                        </button>
+                                    </form>
+                                </div>
+
+                            </div>
+                        </div>
+                        <% }) %>
+                            <% } else { %>
+                                <div class="empty-cart">
+                                    <p>
+                                        Não existem serviços no carrinho
+                                    </p>
+                                </div>
+                                <% } %>
+
+            </section>
+
+            <section class="resume-options">
+                <div class="purchase-value">
+                    
+                    <% let valorTotal = 0 %>
+                    <% carrinho.map(servico => { %>
+                    <% valorTotal = valorTotal + parseFloat(servico.valor) })%>      
+                        <p>
+                            Valor total R$ <%= valorTotal %>
+                        </p>
                 </div>
 
-                <div class="empty-cart">
+                <div class="checkout-button">
                     <p>
-                        Não existem serviços no carrinho!
+                        IR PARA PAGAMENTO
                     </p>
                 </div>
 
@@ -44,7 +106,7 @@
         </main>
 
     </body>
-    
-<%- include('../partials/footer') %>
+
+    <%- include('../partials/footer') %>
 
 </html>
