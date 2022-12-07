@@ -36,10 +36,11 @@ app.use(express.urlencoded({ extended: false }));
 // Define o uso de sessões
 app.use(session({
     secret: 'projetoOmnihouseDH2022',
-    resave: false,
-    saveUninitialized: false,
+    resave: true,
+    saveUninitialized: true,
     cookie: {
-        secure: false
+        secure: false,
+        maxAge: 3600000
     }
 }));
 

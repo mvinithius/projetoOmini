@@ -24,7 +24,9 @@ router.get('/pedreiro', PageController.pedreiro)
 
 //carrinho
 router.get('/carrinho', CartController.showCart)
-
-
+router.post('/carrinho/adicionar/:id', CartController.addToCart)
+router.post('/carrinho/remover/:id', CartController.removeFromCart)
+router.post('/carrinho/aumentar/:id', CartController.addQuantity)
+router.post('/carrinho/diminuir/:id', CartController.substractQuantity)
 
 module.exports = router;

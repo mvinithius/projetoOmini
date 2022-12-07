@@ -13,12 +13,13 @@ const UserController = {
     //executa a criação do usuário
     UserCreate: async (req, res) => {        
         const {nome, email, senha, senhaConfirm} = req.body;
-        const avatar = req.file.filename;
+        
+        if(!req.file){
+            return res.render('pages/users/cadastroSimples', {error: 'É necessário enviar uma foto'})
+        } 
 
         if(senha != senhaConfirm){
-            res.render('pages/users/cadastroSimples', {error: 'Senha não coincide'});
-
-            return
+            return res.redirect('pages/users/cadastroSimples', {error: 'Senha não coincide'});
         }
         
         const hash = bcrypt.hashSync(senha, saltRounds);
@@ -39,9 +40,6 @@ const UserController = {
             avatar
         }
         
-        // imprime os dados do usuario no console
-        console.log('dados da const user:', user)
-
         await Usuario.create(user)
             .then((user) => {
                 req.session.user = user.id
