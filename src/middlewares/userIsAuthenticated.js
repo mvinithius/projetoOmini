@@ -8,7 +8,7 @@ const userIsAuthenticated = (req, res, next) => {
     // Ou seja, se existe uma sessão para o usuário
     if (req.session.user == undefined) {
       // Se não estiver logado, redireciona para a página de login
-      return res.redirect('login');
+      return res.redirect('/users/login');
     }
     
     // Se estiver logado, continua a execução

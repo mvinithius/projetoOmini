@@ -13,10 +13,16 @@ const UserController = {
     //executa a criação do usuário
     UserCreate: async (req, res) => {        
         const {nome, email, senha, senhaConfirm} = req.body;
-        
         if(!req.file){
-            return res.render('pages/users/cadastroSimples', {error: 'É necessário enviar uma foto'})
-        } 
+            var avatar = 'Sem avatar';
+        } else {
+            var avatar = req.file.filename;
+        }
+        console.log(avatar)
+        
+        // if(!req.file){
+        //     return res.render('pages/users/cadastroSimples', {error: 'É necessário enviar uma foto'})
+        // } 
 
         if(senha != senhaConfirm){
             return res.redirect('pages/users/cadastroSimples', {error: 'Senha não coincide'});

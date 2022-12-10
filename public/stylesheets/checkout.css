@@ -9,6 +9,47 @@ main{
   margin: 0 auto !important;
 }
 
+.adress-selector{
+  border: 1px solid #1D3D73;
+  border-radius: 5px;
+  padding: 30px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  box-sizing: border-box;
+  row-gap: 15px;
+  column-gap: 15px;
+  margin-bottom: 30px;
+}
+
+.adress-selector h1{
+  font-size: 25px;
+  font-weight: bold;
+}
+
+.adress-selector select{
+  max-width: 400px;
+  width: 100%;
+  height: 30px;
+  border: 2px solid #1D3D73;
+  cursor: pointer;
+  font-size: 16px;
+  color: #1D3D73;
+}
+
+.no-address h2{
+  font-size: 16px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.no-address a{
+  text-decoration: underline;
+  font-weight: bold;
+}
+
 .title{
   padding: 45px;
   text-align: center;
@@ -28,6 +69,7 @@ main{
 
 .product-list{
   border: 1px solid #1D3D73;
+  border-radius: 5px;
   padding: 30px;
   width: 100%;
   display: flex;
@@ -66,7 +108,6 @@ main{
   margin: 0 auto;
 }
 
-
 .card-title{
   font-size: 20px;
   font-weight: bold;
@@ -75,20 +116,12 @@ main{
   width: 100%;
 }
 
-/* .card {
-
-} */
-
 .service-image img{
   max-width: 180px;
   max-height: 140px;
   object-fit: cover;
   box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
 }
-
-/* .card-description{
-
-} */
 
 .card-quant{
   text-align: center;
@@ -108,7 +141,7 @@ main{
   max-width: 18px;
 }
 
-.substract button[type=submit]{
+/* .substract button[type=submit]{
   background-color: #F5F5F5;
   border: none;
   cursor: pointer;
@@ -118,27 +151,29 @@ main{
   background-color: #F5F5F5;
   border: none;
   cursor: pointer;
-}
+} */
 
 .card-value{
   font-weight: 800;
-}
-
-.remove-item img{
-  max-width: 28px;
-
-}
-
-.remove-item button[type=submit]{
-  background-color: #F5F5F5;
-  border: none;
-  cursor: pointer;
-}
-
-.empty-cart {
+  max-width: 100px;
   width: 100%;
   text-align: center;
 }
+
+/* .remove-item img{
+  max-width: 28px;
+} */
+
+/* .remove-item button[type=submit]{
+  background-color: #F5F5F5;
+  border: none;
+  cursor: pointer;
+} */
+
+/* .empty-cart {
+  width: 100%;
+  text-align: center;
+} */
 
 .empty-cart p{
   font-size: 20px;
@@ -168,6 +203,7 @@ main{
   padding: 15px;
   text-align: center;
   box-sizing: border-box;
+  border-radius: 5px;
   background-color: #1D3D73;
   cursor: pointer;
 }
