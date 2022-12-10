@@ -9,6 +9,7 @@ const upload = multer({ storage });
 const AuthController = require('../controllers/AuthController');
 const AddressController = require('../controllers/addressController');
 const CreditCardController = require('../controllers/creditCardController');
+const CheckoutController = require('../controllers/checkoutController');
 
 //rota para fazer o logout do usuario
 router.post('/logout', AuthController.executeUserLogout);
@@ -50,9 +51,9 @@ router.post('/perfil/:id/enderecos/editar/:id', AddressController.editAddress);
 // rota para atualizar o endereço
 router.post('/perfil/:id/enderecos/delete/:id', AddressController.deleteAddress);
 
-// ======
+// ========
 // CARTOES
-// =======
+// ========
 
 // rota para renderizar lista de cartões
 router.get('/perfil/:id/cartoes', CreditCardController.renderCreditCardList)
@@ -64,6 +65,15 @@ router.get('/perfil/:id/cartoes/adicionar', CreditCardController.renderCreditCar
 router.post('/perfil/:id/cartoes/adicionar', CreditCardController.addCreditCard);
 
 // rota para excluir um cartão
-router.post('/perfil/:id/cartoes/delete/:id', CreditCardController.deleteCreditCard) ;
+router.post('/perfil/:id/cartoes/delete/:id', CreditCardController.deleteCreditCard);
+
+// ====================
+// CHECKOUT E PAGAMENTO
+// ====================
+
+router.get('/checkout', CheckoutController.renderCheckout);
+
+router.get('/pagamento', CheckoutController.renderPaymentPage);
+
 
 module.exports = router;

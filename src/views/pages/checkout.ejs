@@ -1,0 +1,100 @@
+<html>
+<link rel="stylesheet" href="/stylesheets/checkout.css">
+
+<%- include('../partials/header') %>
+
+    <body>
+        <main>
+            <div class="title">
+                <h1>
+                    CHECKOUT
+                </h1>
+            </div>
+
+            <div class="adress-selector">
+                <label for="endereco"><h1>Selecione seu endereço</h1></label>
+                
+                    <% if(enderecos && enderecos.length > 0){ %>
+                        <select id="endereco">
+                            <% enderecos.map(endereco => { %>
+                                <option value="<%=endereco.id_endereco%>">
+                                    <%= endereco.nome_endereco %>,
+                                    <%= endereco.logradouro %>, 
+                                    <%= endereco.numero_casa %>,
+                                    <%= endereco.bairro %>,
+                                    <%= endereco.cidade %>
+                                </option>          
+                            <% }) %>
+                        </select>
+                    <% } else { %>
+                        <div class='no-address'>
+                            <h2>Você não possui endereços cadastrados ):</h2>
+                            
+                            Cadastre um novo endereço <a href="/users/perfil/<%= userId %>/enderecos/adicionar">aqui</a>. E depois retorne para o checkout.
+                        </div>
+                    <% } %> 
+                
+            </div>
+
+            <section class="product-list">
+
+                <% if(carrinho && carrinho.length> 0){ %>
+                    <% carrinho.map(servico=> { %>
+                        <div class="card">
+
+                            <div class="service-image">
+                                <img src="/uploads/<%= servico.imagem %>">
+                            </div>
+
+                            <div class="service-information">
+
+                                <div class="card-title">Serviço de <%= servico.titulo %></div>
+                                <div class="card-quant">
+
+                                    <div class="text-quant">
+                                        Quant.
+                                    </div>
+                                    <input type="number" name="quantidade" class="quantidade"
+                                        value="<%= servico.quantidade %>" min="1" max="9" maxlength="1" readonly>
+                                </div>
+
+                                <div class="card-value">
+                                    R$ <%= servico.valor %>
+                                </div>
+
+                            </div>
+
+                        </div>
+                        </div>
+                        <% }) %>
+                            <% } else { %>
+                                <div class="empty-cart">
+                                    <p>
+                                        Não existem serviços para compra!
+                                    </p>
+                                </div>
+                                <% } %>
+
+            </section>
+
+            <section class="resume-options">
+                <div class="purchase-value">
+                    <p>
+                        Valor total R$ <%= valorTotalArredondado %>
+                    </p>
+                </div>
+
+                <div class="checkout-button">
+                    <a href="/users/pagamento">
+                        IR PARA PAGAMENTO
+                    </a>
+                </div>
+            </section>
+
+        </main>
+
+    </body>
+
+    <%- include('../partials/footer') %>
+
+</html>

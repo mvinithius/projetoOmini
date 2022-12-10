@@ -3,7 +3,6 @@ var router = express.Router();
 
 //importando o controller
 const PageController = require('../controllers/pageController')
-const ServiceController = require('../controllers/serviceController')
 const CartController = require('../controllers/cartController')
 
 //home
@@ -25,8 +24,8 @@ router.get('/pedreiro', PageController.pedreiro)
 //carrinho
 router.get('/carrinho', CartController.showCart)
 router.post('/carrinho/adicionar/:id', CartController.addToCart)
-router.post('/carrinho/remover/:id', CartController.removeFromCart)
+router.delete('/carrinho/remover', CartController.removeFromCart)
 router.post('/carrinho/aumentar/:id', CartController.addQuantity)
-router.post('/carrinho/diminuir/:id', CartController.substractQuantity)
+router.post('/carrinho/diminuir', CartController.substractQuantity)
 
 module.exports = router;

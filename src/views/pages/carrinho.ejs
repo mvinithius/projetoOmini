@@ -40,31 +40,31 @@
                                     </div>
 
                                     <div class="quant-manager">
-                                        <form action="/carrinho/diminuir/:id" method="post" class="substract">
+                                        <form action="/carrinho/diminuir" method="post" class="substract">
                                             <button type="submit">
                                                 <img src="/images/minusIcon.png">
                                             </button>
                                         </form>
-    
+
                                         <input type="number" name="quantidade" class="quantidade"
                                             value="<%= servico.quantidade %>" min="1" max="9" maxlength="1" readonly>
-    
-                                        <form action="/carrinho/aumentar/:id" method="post" class="add">
+
+                                        <form action="/carrinho/aumentar/<%= servico.id %>" method="post" class="add">
                                             <button type="submit">
                                                 <img src="/images/plusIcon.png">
                                             </button>
                                         </form>
 
-                                    </div>                                 
+                                    </div>
 
                                 </div>
 
-                                <div class="card-value">                       
+                                <div class="card-value">
                                     R$ <%= servico.valor %>
                                 </div>
 
                                 <div class="remove-item">
-                                    <form action="/carrinho/remover/:id/<%= servico.id %>" method="post">
+                                    <form action="/carrinho/remover/?_method=DELETE" method="post">
                                         <button type="submit">
                                             <img src="/images/removeFromCart.png">
                                         </button>
@@ -86,19 +86,13 @@
 
             <section class="resume-options">
                 <div class="purchase-value">
-                    
-                    <% let valorTotal = 0 %>
-                    <% carrinho.map(servico => { %>
-                    <% valorTotal = valorTotal + parseFloat(servico.valor) })%>      
-                        <p>
-                            Valor total R$ <%= valorTotal %>
-                        </p>
+                    <p>
+                        Valor total R$ <%= valorTotalArredondado %>
+                    </p>
                 </div>
 
                 <div class="checkout-button">
-                    <p>
-                        IR PARA PAGAMENTO
-                    </p>
+                    <a href="/users/checkout">CONTRATAR SERVIÇO</a>
                 </div>
 
             </section>
