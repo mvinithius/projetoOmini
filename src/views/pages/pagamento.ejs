@@ -33,7 +33,7 @@
                             </div>
                         </div>
                     </div>
-                    <form action="" method="post">
+                    <form action="/users/pagamento" method="post">
                         <div class="cc-mid">
                             <div class="cc-information-top">
                                 <input type="text" name="cc-name" class="label-inputs" id="cc-name" placeholder="Nome impresso no cartão" required>
@@ -41,16 +41,16 @@
                             </div>
                             <div class="cc-information-bottom">
                                 <input type="text" name="due-date" class="label-inputs" id="due-date" placeholder="Validade" required>
-                                <input type="text" name="cvv" class="label-inputs" id="cvv" placeholder="Código de verificação (CVV)" required>
+                                <input type="password" name="cvv" class="label-inputs" id="cvv" placeholder="Código de verificação (CVV)" required>
                             </div>               
                         </div>
                         <div class="cc-bottom">
                             <button type="submit">PAGAR COM CARTÃO</button>
                         </div>
                     </form>
-                    <div id="pix-button">
-                        <a>
-                            
+                    <div class="pix-button">
+                        <a href="#">
+                            OU PAGUE COM PIX
                         </a>
                     </div>
                     

@@ -1,0 +1,47 @@
+<html>
+    <%- include('../../partials/header') %>
+    <link rel="stylesheet" href="/stylesheets/pedidos.css">
+    <body>
+        <main>
+            <div class="btn-voltar">
+                <a href="/users/minha-conta">
+                    Voltar
+                </a>
+            </div>
+
+            <div>
+                <div class="column-container">
+                        <% if (pedido && pedido.length> 0) { %>
+                            <% pedido.map(pedido => { %>
+                                <div class="order-card">
+                                    <div class="label-value">
+                                        <div class="info-title">Nº do pedido:</div>
+                                        #<%= pedido.id_pedido %>   
+                                    </div>
+
+                                    <div class="label-value">
+                                        <div class="info-title">Valor: </div>
+                                        R$ <%= pedido.valor %>   
+                                    </div>
+                                                                 
+                                    <div class="label-value">
+                                        <div class="info-title">Status:</div>
+                                        <%= pedido.status %>   
+                                    </div>
+
+                                </div>
+        
+                        <% }) %>
+                        <% } else { %>
+                            <h1> Nenhum produto a ser mostrado!</h1>
+                        <% } %>
+                </div> 
+
+
+            </div>
+
+        </main>
+
+    </body>
+    <%- include('../../partials/footer') %>
+</html>
