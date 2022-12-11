@@ -20,7 +20,7 @@ module.exports = (sequelize, DataType) => {
             allowNull: false
         },
         avatar: {
-            type: DataType.BLOB('long'),
+            type: DataType.STRING,
             allowNull: true
         }
     },
@@ -29,16 +29,22 @@ module.exports = (sequelize, DataType) => {
         timestamps: false
     })
 
-    Usuario.associate = (listaDeModelos) => {
-        Usuario.hasMany(listaDeModelos.Endereco, {
+    Usuario.associate = (models) => {
+        Usuario.hasMany(models.Endereco, {
             foreignKey: 'fk_usuario',
             as: 'enderecos'
         }),
 
-        Usuario.hasMany(listaDeModelos.CreditCard, {
+        Usuario.hasMany(models.CreditCard, {
             foreignKey: 'fk_usuario',
             as: 'cartoes'
+        }),
+
+        Usuario.hasMany(models.Pedido, {
+            foreignKey: 'fk_usuario',
+            as: 'pedidos'
         })
+
     }
 
     return Usuario

@@ -32,8 +32,8 @@ module.exports = (sequelize, DataType) => {
         timestamps: false
     })
 
-    CreditCard.associate = (listaDeModelos) => {
-        CreditCard.belongsTo(listaDeModelos.CreditCard,{
+    CreditCard.associate = (models) => {
+        CreditCard.belongsTo(models.CreditCard,{
             foreignKey: 'fk_usuario',
             as: 'usuario'
         })

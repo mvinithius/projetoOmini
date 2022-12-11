@@ -67,13 +67,18 @@ router.post('/perfil/:id/cartoes/adicionar', CreditCardController.addCreditCard)
 // rota para excluir um cartão
 router.post('/perfil/:id/cartoes/delete/:id', CreditCardController.deleteCreditCard);
 
-// ====================
-// CHECKOUT E PAGAMENTO
-// ====================
+// ==============================
+// CHECKOUT, PAGAMENTO E PEDIDOS
+// ==============================
 
 router.get('/checkout', CheckoutController.renderCheckout);
 
 router.get('/pagamento', CheckoutController.renderPaymentPage);
 
+router.post('/pagamento', CheckoutController.orderPlace);
+
+router.get('/:id/pedidos', CheckoutController.renderOrders);
+
+router.get('/:id/pedidos/detalhado/:id', CheckoutController.renderOrderDetail);
 
 module.exports = router;

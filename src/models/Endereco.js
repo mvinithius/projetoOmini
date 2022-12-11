@@ -50,8 +50,8 @@ module.exports = (sequelize, DataType) => {
         timestamps: false
     })
 
-    Endereco.associate = (listaDeModelos) => {
-        Endereco.belongsTo(listaDeModelos.Usuario,{
+    Endereco.associate = (models) => {
+        Endereco.belongsTo(models.Usuario,{
             foreignKey: 'fk_usuario',
             as: 'usuario'
         })

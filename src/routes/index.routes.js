@@ -8,18 +8,21 @@ const CartController = require('../controllers/cartController')
 //home
 router.get('/', PageController.home)
 
-//serviços
+//serviços: página com todos
 router.get('/servicos', PageController.servicos)
 
-//páginas dos serviços
-router.get('/chaveiro', PageController.chaveiro)
-router.get('/dedetizador', PageController.dedetizador)
-router.get('/diarista', PageController.diarista)
-router.get('/eletricista', PageController.eletricista)
-router.get('/encanador', PageController.encanador)
-router.get('/jardineiro', PageController.jardineiro)
-router.get('/montador', PageController.montador)
-router.get('/pedreiro', PageController.pedreiro)
+//páginas com descrição dos serviços
+router.get('/servico', PageController.renderServicePage)
+
+
+// router.get('/chaveiro', PageController.chaveiro)
+// router.get('/dedetizador', PageController.dedetizador)
+// router.get('/servico', PageController.diarista)
+// router.get('/eletricista', PageController.eletricista)
+// router.get('/encanador', PageController.encanador)
+// router.get('/jardineiro', PageController.jardineiro)
+// router.get('/montador', PageController.montador)
+// router.get('/pedreiro', PageController.pedreiro)
 
 //carrinho
 router.get('/carrinho', CartController.showCart)

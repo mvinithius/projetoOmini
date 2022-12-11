@@ -7,43 +7,47 @@ const PageController = {
     },
 
     servicos: async (req, res) => {
-       
         const servicos =  await Servico.findAll();
             
         return res.render('pages/servicos', { servicos })
     },
 
-    diarista: (req, res) => {
-        res.render('pages/diarista')
+    renderServicePage: (req, res) => {
+
+        return res.render('pages/servicoGenerico')
     },
 
-    encanador: (req, res) => {
-        res.render('pages/encanador')
-    },
+    // diarista: (req, res) => {
+    //     res.render('pages/servigoGenerico')
+    // },
 
-    dedetizador: (req, res) => {
-        res.render('pages/dedetizador')
-    },
+    // encanador: (req, res) => {
+    //     res.render('pages/encanador')
+    // },
 
-    eletricista: (req, res) => {
-        res.render('pages/eletricista')
-    },
+    // dedetizador: (req, res) => {
+    //     res.render('pages/dedetizador')
+    // },
 
-    pedreiro: (req, res) => {
-        res.render('pages/pedreiro')
-    },
+    // eletricista: (req, res) => {
+    //     res.render('pages/eletricista')
+    // },
 
-    jardineiro: (req, res) => {
-        res.render('pages/jardineiro')
-    },
+    // pedreiro: (req, res) => {
+    //     res.render('pages/pedreiro')
+    // },
 
-    chaveiro: (req, res) => {
-        res.render('pages/chaveiro')
-    },
+    // jardineiro: (req, res) => {
+    //     res.render('pages/jardineiro')
+    // },
 
-    montador: (req, res) => {
-        res.render('pages/montador')
-    }
+    // chaveiro: (req, res) => {
+    //     res.render('pages/chaveiro')
+    // },
+
+    // montador: (req, res) => {
+    //     res.render('pages/montador')
+    // }
 }
 
 module.exports = PageController
