@@ -19,6 +19,8 @@ main{
 }
 
 .container-vitrine{
+    max-width: 1000px;
+    width: 100%;
     padding: 30px;
     display: flex;
     justify-content: center;
