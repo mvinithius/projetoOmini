@@ -2,17 +2,19 @@ const { Servico } = require('../models');
 
 const PageController = {
 
-    home: (req, res) => {
-        res.render('pages/home')
+    home: async (req, res) => {
+        let servicos =  await Servico.findAll();
+
+        res.render('pages/home', {servicos})
     },
 
     servicos: async (req, res) => {
-        const servicos =  await Servico.findAll();
+        let servicos =  await Servico.findAll();
             
         return res.render('pages/servicos', { servicos })
     },
 
-    renderServicePage: (req, res) => {
+    renderServicePage: async (req, res) => {
 
         return res.render('pages/servicoGenerico')
     },

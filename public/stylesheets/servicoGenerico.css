@@ -17,6 +17,7 @@ img {
     object-fit: cover;
     object-position: 0% 15%; 
     box-shadow: 0px 0px 5px 0px gray;
+    border-radius: 10px;
 }
 
 .container-descricao{
@@ -112,6 +113,7 @@ img {
     height: 30px;
     width: 200px;
 }
+
 
 #visita{
     display: flex;
