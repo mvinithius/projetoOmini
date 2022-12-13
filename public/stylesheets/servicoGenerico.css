@@ -9,8 +9,12 @@ img {
     max-width: 100%;
 }
 
+#banner{
+    text-align: center;
+}
+
 #banner img{
-    max-width: 950;
+    max-width: 950px;
     width: 100%;
     height: 300px;
     box-sizing: border-box; 
@@ -18,6 +22,14 @@ img {
     object-position: 0% 15%; 
     box-shadow: 0px 0px 5px 0px gray;
     border-radius: 10px;
+}
+
+.titulo-servico{
+    text-align: center;
+    font-size: 30px;
+    font-weight: 800;
+    color: #1D3D73;
+    padding: 30px;
 }
 
 .container-descricao{
@@ -47,13 +59,12 @@ img {
 
 .container-texto{
     background: #1D3D73;
-    max-width: 80%;
-    height: 150px;
-    max-height: 150px;
+    max-width: 100%;
+    min-height: 100px;
     padding: 20px;
     box-sizing: border-box;
     text-align: left;
-    border-radius: 10px;
+    border-radius: 25px;
 }
 
 .container-texto p{
@@ -74,11 +85,16 @@ img {
 #left-side{
     max-height: 500px;
     max-width: 50%;
-    /* background: #CCCCCC; */
     box-sizing: border-box;
     display: flex;
     flex-direction: column;
     row-gap: 30px;
+}
+
+#left-side p{
+    font-style: italic;
+    font-size: 18px;
+    color: #1D3D73;
 }
 
 #container-agendamento{
@@ -166,7 +182,7 @@ img {
 /* VALOR */
 
 #right-side{
-    height: 300px;
+    max-height: 300px;
     max-width: 35%;
     background: #1D3D73;
     box-sizing: border-box;
@@ -177,7 +193,6 @@ img {
     flex-direction: column;
     justify-content:center;
     row-gap: 25px;
-
 }
 
 #valor h1{
@@ -191,3 +206,35 @@ img {
     font-weight: bold;
     color: #FFFFFF;
 } 
+
+.button-comprar button[type=submit]{
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 40px;
+    border-radius: 4px;
+    background-color: #FFFFFF;  
+    cursor: pointer;
+    margin: 10px auto;
+    border: none;
+    box-shadow: rgba(202, 202, 202, 0.24) 0px 3px 8px;
+}
+
+.button-comprar button[type=submit]:hover{
+    box-shadow: rgba(202, 202, 202, 0.24) 0px 5px 15px;
+}
+
+.button-comprar p{
+    color: #1D3D73;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.button-cart img{
+    width: 20px;
+}
+
+.button-text{
+    color: #FFFFFF;
+}

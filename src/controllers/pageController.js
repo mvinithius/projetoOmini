@@ -15,8 +15,11 @@ const PageController = {
     },
 
     renderServicePage: async (req, res) => {
+        let { id } = req.params;
 
-        return res.render('pages/servicoGenerico')
+        let servico = await Servico.findByPk(id);
+
+        return res.render('pages/servicoGenerico', { servico })
     },
 
     // diarista: (req, res) => {
