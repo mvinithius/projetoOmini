@@ -46,11 +46,11 @@ const CartController = {
     },
 
     addQuantity: (req, res) => {
-        const serviceId = req.params.id;
-        console.log(serviceId)
+        let serviceId = req.params.id;
+        console.log('serviceID: ', serviceId)
 
-        const serviceIndex = req.session.carrinho.findIndex(service => service.id_servico === serviceId);
-        const service = req.session.carrinho[serviceIndex];
+        let serviceIndex = req.session.carrinho.findIndex(service => service.id_servico === serviceId);
+        let service = req.session.carrinho[serviceIndex];
 
         console.log('SERVIÇO RECUPERADO COM INDEX: ', service);
 

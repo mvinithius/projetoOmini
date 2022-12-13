@@ -9,7 +9,7 @@
                 <div id="myCarousel" class="carousel slide" data-ride="carousel">
                     <div class="carousel-inner">
                         <div class="carousel-item active">
-                            <img src="images/banner.jpg" alt="Primeiro slide">
+                            <img src="/images/banner.jpg" alt="Primeiro slide">
                         </div>
                         <div class="carousel-item">
                             <img src="/images/montadorBanner.png" alt="Segundo slide">
@@ -24,19 +24,15 @@
                 </div>
             </div>
 
-            <div class="container-descricao">
+            <div class="titulo-servico">
+                <h1>Contrate o Serviço de <%= servico.titulo %> para sua casa</h1>
+            </div>
 
-                <div id="container-icone">
-                    <img src="/images/iconeDiarista.png" alt="Icone do serviço">
-                </div>
+            <div class="container-descricao">
 
                 <div class="container-texto">
                     <p class="txt_servico">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
-                        et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-                        aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-                        cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-                        culpa qui officia deserunt mollit anim id est laborum.
+                        <%= servico.descricao %> 
                     </p>
                 </div>
             </div>
@@ -44,7 +40,12 @@
             <div id="container-secundario">
 
                 <div id="left-side">
-                    <div id="visita">
+
+                    <p>
+                        Em breve: agendamento por horário e tabela de serviços com valores pré-fixados.
+                    </p>
+
+                    <!-- <div id="visita">
                         <div id="icone">
                             <img src="/images/iconeVisitante.png" alt="icone de visita"> 
                         </div>
@@ -52,9 +53,9 @@
                             <p>AGENDE UMA VISITA</p>
                         </div>
                         
-                    </div>
+                    </div> -->
 
-                    <div id="container-agendamento">
+                    <!-- <div id="container-agendamento">
 
                         <div id="titulo-agendamento">
                             <label for="agendamento">AGENDAMENTO</label>
@@ -70,16 +71,29 @@
                             <button type="submit">AGENDAR</button>
                         </div>
 
-                    </div>
+                    </div> -->
                 </div>
 
                 <div id="right-side">
                     <div id="valor">
-                        <h1>R$ 49,90</h1>                    
+                        <h1>R$ <%= servico.valor %></h1>                    
                     </div>
 
                     <div id="txt">
-                        <p>PELO PERÍODO DE X HORAS</p>
+                        <p>PELO PERÍODO DE 3 HORAS</p>
+                    </div>
+
+                    <div>
+                        <form action="/carrinho/adicionar/<%= servico.id_servico %>" method="post" class="button-comprar">
+                            <button type="submit">
+                                <!-- <div class="button-cart">
+                                    <img src="/images/cartIcon.png">
+                                </div> -->
+                                <p>
+                                    Contrate o serviço
+                                </p>
+                            </button>
+                        </form>
                     </div>
 
                 </div>

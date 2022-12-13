@@ -26,12 +26,9 @@
                             </div>
 
                             <div class="service-information">
-                                <!-- <div class="card-title">ID: <%= servico.id_servico %></div> -->
 
                                 <div class="card-title">Serviço de <%= servico.titulo %>
                                 </div>
-
-                                <!-- <div class="card-description">Descrição: <%= servico.descricao %> </div> -->
 
                                 <div class="card-quant">
 
@@ -40,7 +37,7 @@
                                     </div>
 
                                     <div class="quant-manager">
-                                        <form action="/carrinho/diminuir" method="post" class="substract">
+                                        <form action="/carrinho/diminuir/<%= servico.id_servico %>" method="post" class="substract">
                                             <button type="submit">
                                                 <img src="/images/minusIcon.png">
                                             </button>
@@ -49,7 +46,7 @@
                                         <input type="number" name="quantidade" class="quantidade"
                                             value="<%= servico.quantidade %>" min="1" max="9" maxlength="1" readonly>
 
-                                        <form action="/carrinho/aumentar/<%= servico.id %>" method="post" class="add">
+                                        <form action="/carrinho/aumentar/<%= servico.id_servico %>" method="post" class="add">
                                             <button type="submit">
                                                 <img src="/images/plusIcon.png">
                                             </button>

@@ -12,8 +12,7 @@ router.get('/', PageController.home)
 router.get('/servicos', PageController.servicos)
 
 //páginas com descrição dos serviços
-router.get('/servico', PageController.renderServicePage)
-
+router.get('/servico/:id', PageController.renderServicePage)
 
 // router.get('/chaveiro', PageController.chaveiro)
 // router.get('/dedetizador', PageController.dedetizador)
@@ -28,7 +27,8 @@ router.get('/servico', PageController.renderServicePage)
 router.get('/carrinho', CartController.showCart)
 router.post('/carrinho/adicionar/:id', CartController.addToCart)
 router.delete('/carrinho/remover', CartController.removeFromCart)
+
 router.post('/carrinho/aumentar/:id', CartController.addQuantity)
-router.post('/carrinho/diminuir', CartController.substractQuantity)
+router.post('/carrinho/diminuir/:id', CartController.substractQuantity)
 
 module.exports = router;
