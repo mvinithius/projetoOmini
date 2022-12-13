@@ -1,6 +1,6 @@
 ## Instruções
 
-### Para rodar o projeto instale os módulos npm:
+### Instale os módulos npm:
 
 > npm install
 
